@@ -1,9 +1,10 @@
 import React, { FC } from "react";
+import "./index.scss";
 
 const HomePage: FC = () => {
   return (
     <>
-      <span>i am homepage</span>
+      <span className="text">i am homepage</span>
     </>
   );
 };
