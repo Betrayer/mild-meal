@@ -1,4 +1,7 @@
+@import "../../assets/variables/colors.scss";
+
 .text {
   font-size: 30px;
   font-family: "Ovsyanka", sans-serif;
+  color: $primary-color;
 }
