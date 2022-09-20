@@ -2,6 +2,7 @@
   font-family: "Ovsyanka", sans-serif;
   background-image: url(../../assets/images/headerMobileBg.png);
   background-size: 100%;
+  box-sizing: border-box;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -9,6 +10,7 @@
   align-items: center;
   justify-content: space-between;
   min-width: 320px;
+  width: 100%;
   height: 60px;
   padding: 0 16px;
 
@@ -37,7 +39,7 @@
   .openedSearch {
 
     @media (min-width: 768px) {
-      width: calc(100% - 424px);
+      width: calc(100% - 440px);
       background-color: rgba(228, 76, 233, 0.195);
     }
 
@@ -49,7 +51,7 @@
   .openedCategories {
 
     @media (min-width: 768px) {
-      width: calc(100% - 424px);
+      width: calc(100% - 440px);
       height: 62px;
       background-color: rgba(233, 131, 76, 0.195);
     }
@@ -156,7 +158,7 @@
 
     @media (min-width: 1024px) {
       width: 86px;
-      margin-right: 24px;
+      // margin-right: 24px;
     }
 
     &_wrapper {
