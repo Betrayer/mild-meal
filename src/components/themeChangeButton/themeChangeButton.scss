@@ -31,8 +31,10 @@
     height: 44px;
     background-size: cover;
     top: 32px;
+    cursor: pointer;
 
     .tooltip {
+      user-select: none;
       font-family: "Ovsyanka", sans-serif;
       position: absolute;
       font-size: 9px;

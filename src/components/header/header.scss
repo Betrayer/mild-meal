@@ -1,10 +1,5 @@
-body {
-  background-color: rgb(57, 58, 79);
-  margin: 0px;
-  font-family: "Ovsyanka Press", sans-serif;
-}
-
 .header {
+  font-family: "Ovsyanka", sans-serif;
   background-image: url(../../assets/images/headerMobileBg.png);
   background-size: 100%;
   position: relative;
@@ -14,12 +9,13 @@ body {
   align-items: center;
   justify-content: space-between;
   min-width: 320px;
-  width: 100vw;
   height: 60px;
+  padding: 0 16px;
 
   @media (min-width: 768px) {
     background-image: url(../../assets/images/headerTabletBg.png);
     height: 90px;
+    padding: 0 20px;
   }
 
   @media (min-width: 1024px) {
@@ -27,6 +23,7 @@ body {
     width: 1024px;
     height: 90px;
     margin-top: 44px;
+    padding: 0 24px;
   }
 
   .openMenu {
@@ -38,9 +35,10 @@ body {
   }
 
   .openedSearch {
+
     @media (min-width: 768px) {
-      width: 344px;
-      background-color: rgba(76, 233, 86, 0.195);
+      width: calc(100% - 424px);
+      background-color: rgba(228, 76, 233, 0.195);
     }
 
     @media (min-width: 1024px) {
@@ -49,11 +47,13 @@ body {
   }
 
   .openedCategories {
+
     @media (min-width: 768px) {
-      width: 344px;
+      width: calc(100% - 424px);
       height: 62px;
-      background-color: rgba(76, 233, 86, 0.195);
+      background-color: rgba(233, 131, 76, 0.195);
     }
+
     @media (min-width: 1024px) {
       width: 544px;
     }
@@ -65,6 +65,7 @@ body {
 
   .wrapper {
     display: none;
+
     @media (min-width: 768px) {
       display: block;
     }
@@ -81,21 +82,21 @@ body {
     cursor: pointer;
 
     @media (min-width: 768px) {
-      margin-left: 20px;
+      margin: 0;
     }
 
     @media (min-width: 1024px) {
-      margin-left: 24px;
+      margin: 0;
     }
 
     &-name {
+      font-family: "Ovsyanka Press", sans-serif;
       font-size: 40px;
       line-height: 40px;
       letter-spacing: -0.1em;
     }
 
     &-tagline {
-      font-family: "Ovsyanka", sans-serif;
       font-size: 10px;
       line-height: 10px;
       letter-spacing: -0.09em;
@@ -107,7 +108,6 @@ body {
     height: 30px;
     background-position: center;
     background-repeat: no-repeat;
-    margin-right: 16px;
 
     @media (min-width: 768px) {
       display: none;
@@ -146,7 +146,6 @@ body {
     @media (min-width: 768px) {
       width: 80px;
       text-align: center;
-      margin-right: 20px;
       cursor: pointer;
       user-select: none;
       display: block;
