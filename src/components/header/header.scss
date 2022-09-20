@@ -1,0 +1,168 @@
+.header {
+  font-family: "Ovsyanka", sans-serif;
+  background-image: url(../../assets/images/headerMobileBg.png);
+  background-size: 100%;
+  box-sizing: border-box;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 320px;
+  width: 100%;
+  height: 60px;
+  padding: 0 16px;
+
+  @media (min-width: 768px) {
+    background-image: url(../../assets/images/headerTabletBg.png);
+    height: 90px;
+    padding: 0 20px;
+  }
+
+  @media (min-width: 1024px) {
+    background-image: url(../../assets/images/headerLaptopBg.png);
+    width: 1024px;
+    height: 90px;
+    margin-top: 44px;
+    padding: 0 24px;
+  }
+
+  .openMenu {
+    background-image: url(../../assets/images/menuButtonOpen.png);
+  }
+
+  .closeMenu {
+    background-image: url(../../assets/images/menuButtonClose.png);
+  }
+
+  .openedSearch {
+
+    @media (min-width: 768px) {
+      width: calc(100% - 440px);
+      background-color: rgba(228, 76, 233, 0.195);
+    }
+
+    @media (min-width: 1024px) {
+      width: 544px;
+    }
+  }
+
+  .openedCategories {
+
+    @media (min-width: 768px) {
+      width: calc(100% - 440px);
+      height: 62px;
+      background-color: rgba(233, 131, 76, 0.195);
+    }
+
+    @media (min-width: 1024px) {
+      width: 544px;
+    }
+  }
+
+  .hiddenElement {
+    display: none;
+  }
+
+  .wrapper {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
+  }
+
+  &_logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    margin-left: calc(50% - 86px);
+    user-select: none;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+      margin: 0;
+    }
+
+    @media (min-width: 1024px) {
+      margin: 0;
+    }
+
+    &-name {
+      font-family: "Ovsyanka Press", sans-serif;
+      font-size: 40px;
+      line-height: 40px;
+      letter-spacing: -0.1em;
+    }
+
+    &-tagline {
+      font-size: 10px;
+      line-height: 10px;
+      letter-spacing: -0.09em;
+    }
+  }
+
+  &_menu-button {
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &_categories-button {
+    display: none;
+
+    @media (min-width: 768px) {
+      cursor: pointer;
+      width: 60px;
+      height: 62px;
+      display: block;
+      background-image: url(../../assets/images/categories.png);
+      background-repeat: no-repeat;
+    }
+  }
+
+  &_search-form {
+    display: none;
+
+    @media (min-width: 768px) {
+      cursor: pointer;
+      width: 60px;
+      height: 62px;
+      display: block;
+      background-image: url(../../assets/images/searchbutton.png);
+      background-repeat: no-repeat;
+    }
+  }
+
+  &_login-button {
+    display: none;
+
+    @media (min-width: 768px) {
+      width: 80px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      display: block;
+      font-family: "Ovsyanka Press", sans-serif;
+      font-size: 24px;
+      letter-spacing: -0.1em;
+    }
+
+    @media (min-width: 1024px) {
+      width: 86px;
+      // margin-right: 24px;
+    }
+
+    &_wrapper {
+      position: relative;
+    }
+  }
+}

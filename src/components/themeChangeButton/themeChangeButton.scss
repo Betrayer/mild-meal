@@ -1,0 +1,57 @@
+@keyframes color-change {
+  0% {
+    color: transparent;
+  }
+  25% {
+    color: transparent;
+  }
+  40% {
+    color: rgb(0, 0, 0);
+  }
+  60% {
+    color: rgb(255, 255, 255);
+  }
+  75% {
+    color: transparent;
+  }
+  100% {
+    color: transparent;
+  }
+}
+
+.theme-change-button {
+  display: none;
+
+  @media (min-width: 768px) {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    display: block;
+    width: 66px;
+    height: 44px;
+    background-size: cover;
+    top: 32px;
+    cursor: pointer;
+
+    .tooltip {
+      user-select: none;
+      font-family: "Ovsyanka", sans-serif;
+      position: absolute;
+      font-size: 9px;
+      text-align: center;
+      width: 100%;
+      left: 46%;
+      transform: translateX(-50%);
+      bottom: 50%;
+      animation: color-change 12s infinite;
+      letter-spacing: -0.08em;
+    }
+  }
+}
+.dark_theme {
+  background-image: url(../../assets/images/chameleon.png);
+}
+
+.light_theme {
+  background-image: url(../../assets/images/chameleon2.png);
+}
