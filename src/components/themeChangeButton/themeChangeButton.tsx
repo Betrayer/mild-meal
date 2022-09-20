@@ -8,7 +8,6 @@ const ThemeChangeButton: FC = () => {
   };
 
   return (
-    <>
       <div
         className={`theme-change-button ${
           darkTheme ? "dark_theme" : "light_theme"
@@ -17,7 +16,6 @@ const ThemeChangeButton: FC = () => {
       >
         <span className="tooltip">Change theme</span>
       </div>
-    </>
   );
 };
 

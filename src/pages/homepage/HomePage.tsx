@@ -3,9 +3,7 @@ import "./index.scss";
 
 const HomePage: FC = () => {
   return (
-    <>
     <span>eto bodi homepage</span>
-    </>
   );
 };
 
