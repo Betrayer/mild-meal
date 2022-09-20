@@ -3,6 +3,12 @@
   src: local(Ovsyanka), url(../../assets/fonts/Ovsyanka.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "Ovsyanka Press";
+  src: local(Ovsyanka Press),
+    url(../../assets/fonts/Ovsyanka_Press.ttf) format("truetype");
+}
+
 body {
   margin: 0px;
 }
