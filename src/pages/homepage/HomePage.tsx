@@ -4,7 +4,7 @@ import "./index.scss";
 const HomePage: FC = () => {
   return (
     <>
-      <span className="text">i am homepage</span>
+    <span>eto bodi homepage</span>
     </>
   );
 };
