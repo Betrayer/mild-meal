@@ -1,0 +1,64 @@
+.greeting-section {
+  background-image: url(../../assets/images/mobileGreetingSectionBg.png);
+  width: 320px;
+  height: 386px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 32px 12px 0;
+  &__text {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: -0.1em;
+    p:not(:last-child) {
+      margin: 0 0 18px;
+    }
+    p:last-child {
+      margin: 0;
+    }
+  }
+  &__socials {
+    align-self: flex-end;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 140px;
+    height: 24px;
+    margin: 10px 12px 0 0;
+    padding: 0;
+    li {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      background-size: contain;
+      &:active {
+        scale: 110%;
+      }
+    }
+    &__facebook {
+      background-image: url(../../assets/images/facebookIcon.png);
+      &:hover {
+        background-image: url(../../assets/images/facebookIconHover.png);
+      }
+    }
+    &__instagram {
+      background-image: url(../../assets/images/instagramIcon.png);
+      &:hover {
+        background-image: url(../../assets/images/instagramIconHover.png);
+      }
+    }
+    &__youtube {
+      background-image: url(../../assets/images/youtubeIcon.png);
+      &:hover {
+        background-image: url(../../assets/images/youtubeIconHover.png);
+      }
+    }
+    &__twitter {
+      background-image: url(../../assets/images/twitterIcon.png);
+      &:hover {
+        background-image: url(../../assets/images/twitterIconHover.png);
+      }
+    }
+  }
+}

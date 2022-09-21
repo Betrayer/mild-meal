@@ -1,7 +1,8 @@
-@import "../../assets/variables/colors.scss";
-
-.text {
-  font-size: 30px;
-  font-family: "Ovsyanka", sans-serif;
-  color: $primary-color;
+.pageWrapper {
+  background-image: url(../../assets/images/mobileBodyBg.png);
+  min-width: 360px;
+  height: 800px;
+  padding: 60px 0 0;
+  display: flex;
+  justify-content: center;
 }
