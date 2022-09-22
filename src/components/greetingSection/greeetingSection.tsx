@@ -21,16 +21,16 @@ const GreetingSection: FC = () => {
       </div>
       <ul className="greeting-section__socials">
         <li className="greeting-section__socials__facebook">
-          <a className="facebook" href="https://www.google.com.ua/"></a>
+          <a className="facebook" href=""></a>
         </li>
         <li className="greeting-section__socials__instagram">
-          <a className="instagram" href="https://www.google.com.ua/"></a>
+          <a className="instagram" href=""></a>
         </li>
         <li className="greeting-section__socials__youtube">
-          <a className="youtube" href="https://www.google.com.ua/"></a>
+          <a className="youtube" href=""></a>
         </li>
         <li className="greeting-section__socials__twitter">
-          <a className="twitter" href="https://www.google.com.ua/"></a>
+          <a className="twitter" href=""></a>
         </li>
       </ul>
     </section>

@@ -1,8 +1,28 @@
-.pageWrapper {
-  background-image: url(../../assets/images/mobileBodyBg.png);
-  min-width: 360px;
-  height: 800px;
-  padding: 60px 0 0;
+.homePage {
+  box-sizing: border-box;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+
+  @media (min-width: 768px) {
+    background-image: url(../../assets/images/tabletSectionsWrapperBg.png);
+    width: 660px;
+    height: 490px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 36px 52px 0;
+    margin-top: 118px;
+  }
+
+  @media (min-width: 1024px) {
+    background-image: url(../../assets/images/laptopSectionsWrapperBg.png);
+    width: 1024px;
+    height: 510px;
+    padding: 44px 78px 0;
+    margin-top: 156px;
+  }
 }
