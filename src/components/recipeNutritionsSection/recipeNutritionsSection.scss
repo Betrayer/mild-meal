@@ -1,0 +1,70 @@
+.recipe-nutritions-section {
+  background-image: url(../../assets/images/mobileRecipeNutritionsSectionBg.png);
+  width: 320px;
+  height: 326px;
+  margin-top: 12px;
+  box-sizing: border-box;
+  padding: 8px 22px 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @media (min-width: 768px) {
+    background-image: url(../../assets/images/tabletRecipeNutritionsSectionBg.png);
+    height: 500px;
+    width: 270px;
+    margin: 0;
+    padding: 40px 26px 0 18px;
+    flex-direction: row;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__title {
+      background-color: rgba(255, 20, 145, 0.29);
+      height: 22px;
+      margin-bottom: 2px;
+    }
+
+    &__size {
+      background-color: rgba(255, 20, 20, 0.29);
+      height: 10px;
+      margin-bottom: 10px;
+    }
+
+    &__calories {
+      background-color: rgba(20, 255, 220, 0.29);
+      height: 14px;
+      margin-bottom: 10px;
+    }
+
+    &__nutritions {
+      background-color: rgba(212, 255, 20, 0.29);
+      height: 230px;
+      margin: 0;
+
+      @media (min-width: 768px) {
+        height: 340px;
+      }
+    }
+  }
+
+  &__button {
+    display: none;
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+    user-select: none;
+
+    @media (min-width: 768px) {
+      position: absolute;
+      display: inline-block;
+      transform: rotate(90deg);
+      right: -84px;
+      top: 50%;
+    }
+  }
+}

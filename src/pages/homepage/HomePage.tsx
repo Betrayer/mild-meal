@@ -1,9 +1,15 @@
 import React, { FC } from "react";
-import "./index.scss";
+import GreetingSection from "../../components/greetingSection/greeetingSection";
+import TrendingSection from "../../components/trendingSection/trendingSection";
+
+import "./homePage.scss";
 
 const HomePage: FC = () => {
   return (
-    <span>eto bodi homepage</span>
+    <div className="homePage">
+      <GreetingSection />
+      <TrendingSection />
+    </div>
   );
 };
 
