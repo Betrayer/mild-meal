@@ -6,6 +6,9 @@
 body {
   font-family: "Ovsyanka", sans-serif;
   margin: 0;
+}
+
+.appWrapper {
   background-image: url(../../assets/images/mobileBodyBg.png);
   width: 100vw;
   height: 916px;
@@ -15,6 +18,7 @@ body {
   align-items: flex-start;
   background-repeat: repeat;
   background-size: contain;
+  cursor: default;
 
   @media (min-width: 768px) {
     background-image: url(../../assets/images/tabletBodyBg.png);

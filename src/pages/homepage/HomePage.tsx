@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import GreetingSection from "../../components/greetingSection/greeetingSection";
 import TrendingSection from "../../components/trendingSection/trendingSection";
 
-import "./index.scss";
+import "./homePage.scss";
 
 const HomePage: FC = () => {
   return (
