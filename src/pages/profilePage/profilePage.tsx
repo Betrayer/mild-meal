@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import UserCutawaySection from "../../components/userCutawaySection/userCutawaySection";
 import UserPersonalsSection from "../../components/userPersonalsSection/userPersonalsSection";
-import UserAddedRecipesSection from "../../components/userAddedRecipesSection/userAddedRecipesSection";
+import UserAddedRecipesSection from "../../components/userSavedRecipesSection/userSavedRecipesSection";
 import UserFavoriteSection from "../../components/userFavoriteSection/userFavoriteSection";
-import UserTodoSection from "../../components/userTodoSection/UserTodoSection";
+import UserTodoSection from "../../components/userTodoSection/userTodoSection";
 
 import "./profilePage.scss";
 

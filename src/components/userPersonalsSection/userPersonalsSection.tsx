@@ -13,24 +13,24 @@ const UserPersonalsSection: FC = () => {
     <div className="user-personals-section">
       <ul className="user-personals-section__list">
         <li className="user-personals-section__list-item">
-          <div className="user-personals-section__list-item__button" onClick={handleClick}>change name</div>
-          <div className="user-personals-section__list-item__prop">my name</div>
+          <span className="user-personals-section__list-item__button" onClick={handleClick}>change name</span>
+          <span className="user-personals-section__list-item__prop">my name</span>
         </li>
         <li className="user-personals-section__list-item">
-          <div className="user-personals-section__list-item__button" onClick={handleClick}>change name</div>
-          <div className="user-personals-section__list-item__prop">my name</div>
+          <span className="user-personals-section__list-item__button" onClick={handleClick}>change name</span>
+          <span className="user-personals-section__list-item__prop">my name</span>
         </li>
         <li className="user-personals-section__list-item">
-          <div className="user-personals-section__list-item__button" onClick={handleClick}>change name</div>
-          <div className="user-personals-section__list-item__prop">my name</div>
+          <span className="user-personals-section__list-item__button" onClick={handleClick}>change name</span>
+          <span className="user-personals-section__list-item__prop">my name</span>
         </li>
         <li className="user-personals-section__list-item">
-          <div className="user-personals-section__list-item__button" onClick={handleClick}>change name</div>
-          <div className="user-personals-section__list-item__prop">my name</div>
+          <span className="user-personals-section__list-item__button" onClick={handleClick}>change name</span>
+          <span className="user-personals-section__list-item__prop">my name</span>
         </li>
         <li className="user-personals-section__list-item">
-          <div className="user-personals-section__list-item__button" onClick={handleClick}>change name</div>
-          <div className="user-personals-section__list-item__prop">my name</div>
+          <span className="user-personals-section__list-item__button" onClick={handleClick}>change name</span>
+          <span className="user-personals-section__list-item__prop">my name</span>
         </li>
       </ul>
       <SocialsSection/>

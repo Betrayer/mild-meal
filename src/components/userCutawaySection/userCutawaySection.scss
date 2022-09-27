@@ -23,7 +23,6 @@
   &__picture-and-name {
     width: 160px;
     height: 212px;
-    background-color: rgba(220, 20, 60, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,10 +69,11 @@
   &__stats {
     width: 50px;
     height: 212px;
-    background-color: rgba(220, 20, 60, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin: 0;
+    padding: 0;
 
     @media (min-width: 768px) {
       width: 28px;
@@ -83,7 +83,6 @@
 }
 
 .cutaway-stats {
-  background-color: rgba(0, 255, 179, 0.5);
   width: 50px;
   height: 70px;
   display: flex;
@@ -98,22 +97,26 @@
 
   &__data {
     font-size: 10px;
-    line-height: 8px;
+    line-height: 10px;
     text-align: center;
-    padding-top: 2px;
 
     @media (min-width: 768px) {
-      font-size: 5.5px;
+      font-size: 5px;
       line-height: 5px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 6px;
+      line-height: 6px;
     }
   }
 
   &__num {
     font-size: 24px;
-    font-family: "Ovsyanka press", sans-serif;
+    font-family: "Ovsyanka Press", sans-serif;
     width: 50px;
     height: 50px;
-    background-color: aliceblue;
+    background-color: #E9E9E9;
     border-radius: 50px;
     text-align: center;
     box-sizing: border-box;
