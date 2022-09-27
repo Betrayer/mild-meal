@@ -1,0 +1,32 @@
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+
+  @media (min-width: 768px) {
+    margin-top: 130px;
+    flex-direction: row;
+    width: 628px;
+    height: 458px;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: 152px;
+    width: 1024px;
+    height: 510px;
+  }
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.content-wrapper-row {
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    width: 800px;
+  }
+}
