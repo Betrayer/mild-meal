@@ -66,5 +66,9 @@
       right: -84px;
       top: 50%;
     }
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
   }
 }

@@ -1,0 +1,132 @@
+.user-cutaway-section {
+  width: 320px;
+  height: 252px;
+  background-image: url(../../assets/images/mobileUserCutawayBg.png);
+  box-sizing: border-box;
+  padding: 20px 40px 0 30px;
+  display: flex;
+  justify-content: space-between;
+  background-size: cover;
+
+  @media (min-width: 768px) {
+    width: 180px;
+    height: 142px;
+    padding: 12px 22px 0 18px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 180px;
+    height: 170px;
+    padding: 24px 24px 0 18px;
+  }
+
+  &__picture-and-name {
+    width: 160px;
+    height: 212px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      width: 90px;
+      height: 120px;
+    }
+
+    &__picture {
+      width: 160px;
+      height: 160px;
+      background-image: url(../../assets/images/userPicPlaceholder.png);
+      margin-bottom: 8px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      @media (min-width: 768px) {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 0;
+      }
+    }
+
+    &__name {
+      font-size: 24px;
+      line-height: 24px;
+
+      @media (min-width: 768px) {
+      }
+    }
+
+    &__age-location {
+      font-size: 10px;
+      line-height: 10px;
+      color: rgb(142, 142, 142);
+
+      @media (min-width: 768px) {
+      }
+    }
+  }
+
+  &__stats {
+    width: 50px;
+    height: 212px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+
+    @media (min-width: 768px) {
+      width: 28px;
+      height: 120px;
+    }
+  }
+}
+
+.cutaway-stats {
+  width: 50px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    width: 28px;
+    height: 38px;
+  }
+
+  &__data {
+    font-size: 10px;
+    line-height: 10px;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      font-size: 5px;
+      line-height: 5px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 6px;
+      line-height: 6px;
+    }
+  }
+
+  &__num {
+    font-size: 24px;
+    font-family: "Ovsyanka Press", sans-serif;
+    width: 50px;
+    height: 50px;
+    background-color: #E9E9E9;
+    border-radius: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 10px;
+
+    @media (min-width: 768px) {
+      font-size: 15px;
+      width: 24px;
+      height: 24px;
+      padding-top: 3px;
+    }
+  }
+}

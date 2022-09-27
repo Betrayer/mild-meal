@@ -1,8 +1,9 @@
 import React, { FC } from "react";
+import "./index.scss";
+import Header from "../header/header";
 import HomePage from "../../pages/homepage/HomePage";
 import RecipePage from "../../pages/recipePage/recipePage";
-import Header from "../header/header";
-import "./index.scss";
+import ProfilePage from "../../pages/profilePage/profilePage";
 
 const App: FC = () => {
   return (
@@ -10,7 +11,8 @@ const App: FC = () => {
       <div className="appWrapper">
         <Header />
         {/* <HomePage /> */}
-        <RecipePage/>
+        {/* <RecipePage/> */}
+        <ProfilePage />
       </div>
     </>
   );
