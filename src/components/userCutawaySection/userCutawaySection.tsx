@@ -4,7 +4,7 @@ import "./userCutawaySection.scss";
 
 const UserCutawaySection: FC = () => {
   return (
-    <div className="user-cutaway-section">
+    <section className="user-cutaway-section">
       <div className="user-cutaway-section__picture-and-name">
         <div className="user-cutaway-section__picture-and-name__picture"></div>
         <div className="user-cutaway-section__picture-and-name__name">name</div>
@@ -39,7 +39,7 @@ const UserCutawaySection: FC = () => {
           </span>
         </li>
       </ul>
-    </div>
+    </section>
   );
 };
 

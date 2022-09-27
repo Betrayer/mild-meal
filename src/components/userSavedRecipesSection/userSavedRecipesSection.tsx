@@ -7,11 +7,11 @@ const UserSavedRecipesSection: FC = () => {
   };
 
   return (
-    <div className="user-saved-recipes-section">
-      <span className="user-saved-recipes-section__text">
+    <section className="user-saved-recipes-section">
+      <p className="user-saved-recipes-section__text">
         Your cookbook is empty and sad! press “add recipe” to add your own dish
         and make your page happier!
-      </span>
+      </p>
       <div className="user-saved-recipes-section__button-wrapper">
         <div
           className="user-saved-recipes-section__button"
@@ -21,7 +21,7 @@ const UserSavedRecipesSection: FC = () => {
           add recipe
         </span>
       </div>
-    </div>
+    </section>
   );
 };
 

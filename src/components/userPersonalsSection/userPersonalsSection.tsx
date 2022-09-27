@@ -10,7 +10,7 @@ const UserPersonalsSection: FC = () => {
   }
 
   return (
-    <div className="user-personals-section">
+    <section className="user-personals-section">
       <ul className="user-personals-section__list">
         <li className="user-personals-section__list-item">
           <span className="user-personals-section__list-item__button" onClick={handleClick}>change name</span>
@@ -34,7 +34,7 @@ const UserPersonalsSection: FC = () => {
         </li>
       </ul>
       <SocialsSection/>
-    </div>
+    </section>
   );
 };
 
