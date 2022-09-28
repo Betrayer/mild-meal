@@ -18,9 +18,9 @@ const App: FC = () => {
   return (
     <div className="appWrapper">
       <Header />
-      <HomePage />
+      {/* <HomePage /> */}
       {/* <RecipePage/> */}
-      {/* <ProfilePage /> */}
+      <ProfilePage />
     </div>
   );
 };

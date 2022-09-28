@@ -11,13 +11,13 @@
   @media (min-width: 768px) {
     width: 180px;
     height: 142px;
-    padding: 12px 22px 0 18px;
+    padding: 12px 8px 0;
   }
 
   @media (min-width: 1024px) {
     width: 180px;
     height: 170px;
-    padding: 24px 24px 0 18px;
+    padding: 18px 8px 0;
   }
 
   &__picture-and-name {
@@ -37,13 +37,11 @@
       height: 160px;
       background-image: url(../../assets/images/userPicPlaceholder.png);
       margin-bottom: 8px;
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
+      background-size: 100%;
 
       @media (min-width: 768px) {
-        width: 90px;
-        height: 90px;
+        width: 84px;
+        height: 84px;
         margin-bottom: 0;
       }
     }
@@ -76,7 +74,7 @@
     padding: 0;
 
     @media (min-width: 768px) {
-      width: 28px;
+      width: 70px;
       height: 120px;
     }
   }
@@ -91,7 +89,7 @@
   align-items: center;
 
   @media (min-width: 768px) {
-    width: 28px;
+    width: 70px;
     height: 38px;
   }
 
@@ -99,15 +97,16 @@
     font-size: 10px;
     line-height: 10px;
     text-align: center;
+    letter-spacing: -0.09em;
 
     @media (min-width: 768px) {
-      font-size: 5px;
-      line-height: 5px;
+      font-size: 11px;
+      line-height: 8px;
     }
 
     @media (min-width: 1024px) {
-      font-size: 6px;
-      line-height: 6px;
+      // font-size: 6px;
+      // line-height: 6px;
     }
   }
 
@@ -116,7 +115,7 @@
     font-family: "Ovsyanka Press", sans-serif;
     width: 50px;
     height: 50px;
-    background-color: #E9E9E9;
+    background-color: #e1e1e1;
     border-radius: 50px;
     text-align: center;
     box-sizing: border-box;
