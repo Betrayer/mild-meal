@@ -15,7 +15,7 @@ const UserCutawaySection: FC = () => {
       <ul className="user-cutaway-section__stats">
         <li className="user-cutaway-section__stats__saved cutaway-stats">
           <span className="user-cutaway-section__stats__saved__data cutaway-stats__data">
-            saved recipes
+            my recipes
           </span>
           <span className="user-cutaway-section__stats__saved__data cutaway-stats__num">
             3
@@ -23,7 +23,7 @@ const UserCutawaySection: FC = () => {
         </li>
         <li className="user-cutaway-section__stats__favs cutaway-stats">
           <span className="user-cutaway-section__stats__saved__favs cutaway-stats__data">
-            favorite recipes
+            favorites
           </span>
           <span className="user-cutaway-section__stats__saved__favs cutaway-stats__num">
             11
