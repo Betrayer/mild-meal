@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, FormEvent } from "react";
 
 import "./loginForm.scss";
 
@@ -7,7 +7,7 @@ interface LoginProps {
   handleLoginButton: () => void;
 }
 
-const handleSubmit = (e: any) => {
+const handleSubmit = (e: FormEvent) => {
   e.preventDefault();
   alert("login");
 };

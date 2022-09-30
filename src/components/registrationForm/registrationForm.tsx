@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, FormEvent } from "react";
 
 import "./registrationForm.scss";
 
@@ -7,7 +7,7 @@ interface RegistrationProps {
   handleLoginButton: () => void;
 }
 
-const handleSubmit = (e: any) => {
+const handleSubmit = (e: FormEvent) => {
   e.preventDefault();
   alert("registration");
 };
@@ -23,34 +23,18 @@ const RegistrationForm: FC<RegistrationProps> = ({
         onClick={handleLoginButton}
       />
       <span className="registration-form__title">registration form</span>
+      <input className="registration-input" type="text" placeholder="name" />
+      <input className="registration-input" type="email" placeholder="email" />
+      <input className="registration-input" type="number" placeholder="age" />
+      <input className="registration-input" type="text" placeholder="city" />
       <input
-        className="registration-form__name registration-input"
-        type="text"
-        placeholder="name"
+        className="registration-input"
+        type="password"
+        placeholder="password"
       />
       <input
-        className="registration-form__email registration-input"
-        type="text"
-        placeholder="email"
-      />
-      <input
-        className="registration-age registration-input"
-        type="text"
-        placeholder="age"
-      />
-      <input
-        className="registration-city registration-input"
-        type="text"
-        placeholder="city"
-      />
-      <input
-        className="registration-form__password registration-input"
-        type="text"
-        placeholder="passsword"
-      />
-      <input
-        className="registration-form__confirm-password registration-input"
-        type="text"
+        className="registration-input"
+        type="passsword"
         placeholder="confirm passsword"
       />
       <label className="checkbox-wrapper">
