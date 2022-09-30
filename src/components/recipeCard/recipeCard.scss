@@ -1,0 +1,118 @@
+.recipe-card {
+  height: fit-content;
+  width: 140px;
+  margin-bottom: 10px;
+
+  @media (min-width: 768px) {
+    width: 226px;
+  }
+
+  &__upper-part {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    border: 0.1px solid;
+    box-sizing: border-box;
+    border-bottom: none;
+
+    @media (min-width: 768px) {
+      height: 92px;
+    }
+
+    &__picture {
+      width: 60px;
+      height: 60px;
+      border-radius: 20px;
+      background-image: url(../../assets/images/foodPlaceholder.jpg);
+      background-size: 100%;
+      border-bottom: 0.1px solid;
+      box-sizing: border-box;
+
+      @media (min-width: 768px) {
+        width: 90px;
+        height: 90px;
+        border-radius: 50px;
+      }
+    }
+
+    &__points-and-name {
+      width: 74px;
+      height: 60px;
+      border-radius: 20px;
+      box-sizing: border-box;
+      padding: 2px 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media (min-width: 768px) {
+        width: 136px;
+        height: 92px;
+      }
+
+      &__points {
+        width: 44px;
+        height: 10px;
+        background-image: url(../../assets/images/5points.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-bottom: 2px;
+
+        @media (min-width: 768px) {
+          width: 84px;
+          height: 16px;
+        }
+      }
+
+      &__name {
+        text-align: center;
+        height: 42px;
+        width: 90%;
+        font-size: 10px;
+        line-height: 8.5px;
+        letter-spacing: -0.1em;
+
+        @media (min-width: 768px) {
+          font-size: 14px;
+          line-height: 14px;
+          width: 120px;
+          height: 64px;
+        }
+      }
+    }
+  }
+
+  &__lower-part {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    border: 0.1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 6px;
+
+    @media (min-width: 768px) {
+      height: 32px;
+    }
+
+    &__description {
+      text-align: center;
+      font-size: 10px;
+      line-height: 8.5px;
+      letter-spacing: -0.1em;
+
+      @media (min-width: 768px) {
+        font-size: 12px;
+        line-height: 12px;
+        width: 212px;
+        height: 24px;
+      }
+    }
+  }
+}

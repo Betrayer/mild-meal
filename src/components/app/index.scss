@@ -3,6 +3,11 @@
   src: local(Ovsyanka), url(../../assets/fonts/Ovsyanka.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "Ovsyanka Press";
+  src: local(Ovsyanka Press), url(../../assets/fonts/Ovsyanka_Press.ttf) format("truetype");
+}
+
 body {
   font-family: "Ovsyanka", sans-serif;
   margin: 0;
@@ -11,7 +16,7 @@ body {
 .appWrapper {
   background-image: url(../../assets/images/mobileBodyBg.png);
   width: 100vw;
-  height: 916px;
+  height: fit-content;
   box-sizing: border-box;
   display: flex;
   justify-content: center;

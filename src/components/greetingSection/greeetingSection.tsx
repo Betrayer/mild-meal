@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import SocialsSection from "../socialsSection/socialsSection";
 import "./greetingSection.scss";
 
 const GreetingSection: FC = () => {
@@ -19,20 +20,7 @@ const GreetingSection: FC = () => {
           leo. Donec viverra libero at ante luctus eleifend. Fusce. fer.
         </p>
       </div>
-      <ul className="greeting-section__socials">
-        <li className="greeting-section__socials__facebook">
-          <a className="facebook" href=""></a>
-        </li>
-        <li className="greeting-section__socials__instagram">
-          <a className="instagram" href=""></a>
-        </li>
-        <li className="greeting-section__socials__youtube">
-          <a className="youtube" href=""></a>
-        </li>
-        <li className="greeting-section__socials__twitter">
-          <a className="twitter" href=""></a>
-        </li>
-      </ul>
+      <SocialsSection/>
     </section>
   );
 };
