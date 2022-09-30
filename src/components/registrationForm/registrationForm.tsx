@@ -23,20 +23,12 @@ const RegistrationForm: FC<RegistrationProps> = ({
         onClick={handleLoginButton}
       />
       <span className="registration-form__title">registration form</span>
-      <input className="registration-input" type="text" placeholder="name" />
-      <input className="registration-input" type="email" placeholder="email" />
-      <input className="registration-input" type="number" placeholder="age" />
-      <input className="registration-input" type="text" placeholder="city" />
-      <input
-        className="registration-input"
-        type="password"
-        placeholder="password"
-      />
-      <input
-        className="registration-input"
-        type="passsword"
-        placeholder="confirm passsword"
-      />
+      <input type="text" placeholder="name" />
+      <input type="email" placeholder="email" />
+      <input type="number" placeholder="age" />
+      <input type="text" placeholder="city" />
+      <input type="password" placeholder="password" />
+      <input type="password" placeholder="confirm passsword" />
       <label className="checkbox-wrapper">
         <input className="registration-form__checkbox" type="checkbox" /> i
         promise to be a good boy/girl/helicopter

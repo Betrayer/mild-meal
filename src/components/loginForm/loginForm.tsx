@@ -17,12 +17,8 @@ const LoginForm: FC<LoginProps> = ({ handleClick, handleLoginButton }) => {
     <form className="login-form" onSubmit={(e) => handleSubmit(e)}>
       <div className="login-form__close-button" onClick={handleLoginButton} />
       <span className="login-form__title">login form</span>
-      <input className="login-form__email" type="text" placeholder="email" />
-      <input
-        className="login-form__password"
-        type="text"
-        placeholder="passsword"
-      />
+      <input type="text" placeholder="email" />
+      <input type="text" placeholder="passsword" />
       <button className="login-form__buttons__login-button" type="submit">
         login
       </button>

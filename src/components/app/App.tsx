@@ -28,7 +28,6 @@ const App: FC = () => {
       )}
       {/* <HomePage /> */}
       {/* <RecipePage/> */}
-      {/* <LoginAndRegistrationSection/> */}
     </div>
   );
 };

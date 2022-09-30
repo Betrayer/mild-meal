@@ -15,8 +15,7 @@
     letter-spacing: -0.1em;
   }
 
-  &__email,
-  &__password {
+  input {
     background-color: #e0e0e0;
     width: 240px;
     height: 36px;
@@ -47,6 +46,10 @@
       cursor: pointer;
       margin-top: 20px;
       padding: 2px 10px;
+      &:hover {
+        color: rgb(215, 207, 190);
+        background-color: #9b9b9b;
+      }
     }
 
     &__register-button {
@@ -58,6 +61,9 @@
       cursor: pointer;
       font-size: 12px;
       margin-top: 20px;
+      &:hover {
+        color: rgb(73, 157, 225);
+      }
     }
   }
 
