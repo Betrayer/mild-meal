@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import HomePage from "../../pages/homepage/HomePage";
 import RecipePage from "../../pages/recipePage/recipePage";
 import Header from "../header/header";
@@ -6,15 +6,20 @@ import LoginAndRegistrationSection from "../loginAndRegistrationSection/loginAnd
 import "./index.scss";
 
 const App: FC = () => {
+  const [showLoginModal, setShowLoginModal] = useState(false);
+
+  const handleLoginButton = () => {
+    setShowLoginModal(!showLoginModal)
+  }
+
   return (
-    <>
       <div className="appWrapper">
-        <Header />
+        <Header handleLoginButton={handleLoginButton}/>
+        {showLoginModal && <LoginAndRegistrationSection handleLoginButton={handleLoginButton}/>}
         {/* <HomePage /> */}
-        <RecipePage/>
-        <LoginAndRegistrationSection/>
+        {/* <RecipePage/> */}
+        {/* <LoginAndRegistrationSection/> */}
       </div>
-    </>
   );
 };
 

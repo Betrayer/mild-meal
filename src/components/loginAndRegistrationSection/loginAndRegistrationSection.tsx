@@ -1,67 +1,58 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState, useRef, useEffect } from "react";
+import LoginForm from "../loginForm/loginForm";
+import RegistrationForm from "../registrationForm/registrationForm";
 import "./loginAndRegistrationSection.scss";
 
-const LoginAndRegistrationSection: FC = () => {
-  const [loginForm, setLoginForm] = useState(true);
+interface LoginAndRegistrationProps {
+  handleLoginButton: () => void;
+}
 
-  const switchForms = () => {
-    setLoginForm(!loginForm);
+const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
+  handleLoginButton,
+}) => {
+  const [toggleForms, setLoginForm] = useState(true);
+
+  const handleClick = () => {
+    setLoginForm(!toggleForms);
   };
 
-  const login = () => {
-    alert("logging in");
-  };
+  // const bodyRef = useRef(null);
+  // const sectionRef = useRef(null);
 
-  const register = () => {
-    alert("regging");
-  };
+  // useEffect(() => {
+  //   document.addEventListener("mousedown", (e) => {
+  //     //@ts-ignore
+  //     if (sectionRef.current.contains(e.target)) {
+  //       handleLoginButton();
+  //       // console.log(e.target)
+  //     }
+  //   });
+  //   document.addEventListener("keydown", (e) => {
+  //     if (e.key === "escape") {
+  //       handleLoginButton();
+  //       console.log("123");
+  //     }
+  //   });
+
+  // return () => {
+  // document.removeEventListener("mousedown", handleLoginButton);
+  // document.removeEventListener("keydown", handleLoginButton);
+  // };
+  // }, []);
 
   return (
-
     <section className="login-and-registration-section">
-      <div
-        className={`login-and-registration-section__login-form ${
-          loginForm ? "" : "hidden"
-        }`}
-      >
-        <div className="login-and-registration-section__login-form__fields"></div>
-        <div className="login-and-registration-section__login-form__buttons ">
-          <button
-            className="login-and-registration-section__login-form__buttons__login-button"
-            onClick={login}
-          >
-            login
-          </button>
-          <button
-            className="login-and-registration-section__login-form__buttons__register-button"
-            onClick={switchForms}
-          >
-            register
-          </button>
-        </div>
-      </div>
-
-      <div
-        className={`login-and-registration-section__registration-form ${
-          loginForm ? "hidden" : ""
-        }`}
-      >
-        <div className="login-and-registration-section__registration-form__fields"></div>
-        <div className="login-and-registration-section__registration-form__buttons ">
-          <button
-            className="login-and-registration-section__registration-form__buttons__register-button"
-            onClick={register}
-          >
-            register
-          </button>
-          <button
-            className="login-and-registration-section__registration-form__buttons__login-button"
-            onClick={switchForms}
-          >
-            login
-          </button>
-        </div>
-      </div>
+      {toggleForms ? (
+        <LoginForm
+          handleClick={handleClick}
+          handleLoginButton={handleLoginButton}
+        />
+      ) : (
+        <RegistrationForm
+          handleClick={handleClick}
+          handleLoginButton={handleLoginButton}
+        />
+      )}
     </section>
   );
 };

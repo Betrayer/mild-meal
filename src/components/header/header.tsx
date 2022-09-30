@@ -1,11 +1,17 @@
 import React, { FC, useState } from "react";
+import LoginAndRegistrationSection from "../loginAndRegistrationSection/loginAndRegistrationSection";
 import ThemeChangeButton from "../themeChangeButton/themeChangeButton";
 import "./header.scss";
 
-const Header: FC = () => {
+interface HeaderProps {
+  handleLoginButton: () => void;
+}
+
+const Header: FC<HeaderProps> = ({ handleLoginButton }) => {
   const [menuIsVisible, setMenuIsVisible] = useState(false);
   const [categoriesAreOpened, setCategoriesAreOpened] = useState(false);
   const [searchIsOpened, setSearchIsOpened] = useState(true);
+  const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
 
   const handleMenuClick = () => {
     setMenuIsVisible(!menuIsVisible);
@@ -18,9 +24,6 @@ const Header: FC = () => {
 
   const searchAlert = () => {
     alert("Search!");
-  };
-  const loginAlert = () => {
-    alert("LogIn!");
   };
 
   return (
@@ -66,7 +69,7 @@ const Header: FC = () => {
       </div>
 
       <div className="header_login-button_wrapper wrapper">
-        <span className="header_login-button" onClick={loginAlert}>
+        <span className="header_login-button" onClick={handleLoginButton}>
           log in
         </span>
         <ThemeChangeButton />
