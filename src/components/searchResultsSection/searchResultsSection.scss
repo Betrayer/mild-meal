@@ -1,0 +1,23 @@
+.search-results-section__title {
+  letter-spacing: -0.1em;
+  font-size: 20px;
+
+  @media (min-width: 1024px) {
+    font-size: 24px;
+  }
+}
+
+.search-results-section__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 10px 0 0;
+  justify-content: space-between;
+
+  & li {
+    @media (min-width: 1024px) {
+      margin-bottom: 8px;
+    }
+  }
+}
