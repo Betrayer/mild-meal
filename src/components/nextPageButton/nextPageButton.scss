@@ -1,0 +1,45 @@
+.next-page-button {
+  background-color: #d8f4bd;
+  width: 288px;
+  height: 90px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid rgb(30, 96, 51);
+
+  @media (min-width: 768px) {
+    height: 124px;
+    width: 226px;
+    padding-bottom: 12px;
+  }
+
+  &:hover {
+    background-color: #c8f19f;
+  }
+
+  &:active {
+    scale: 96%;
+    background-color: #aee07c;
+  }
+
+  &__upper-part {
+    background-image: url(../../assets/images/nextPageButtonAvocado.png);
+    height: 50px;
+    width: 92px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    @media (min-width: 768px) {
+      height: 80px;
+      width: 144px;
+    }
+  }
+
+  &__lower-part {
+    border-top: 1px solid;
+    width: 100%;
+  }
+}

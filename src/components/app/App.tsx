@@ -6,6 +6,7 @@ import RecipePage from "../../pages/recipePage/recipePage";
 import Header from "../header/header";
 import LoginAndRegistrationSection from "../loginAndRegistrationSection/loginAndRegistrationSection";
 import "./index.scss";
+import SearchResultsPage from "../../pages/searchResultsPage/searchResultsPage";
 
 const App: FC = () => {
   // const getDummyData = async () => {
@@ -28,6 +29,7 @@ const App: FC = () => {
       )}
       {/* <HomePage /> */}
       {/* <RecipePage/> */}
+      <SearchResultsPage/>
     </div>
   );
 };

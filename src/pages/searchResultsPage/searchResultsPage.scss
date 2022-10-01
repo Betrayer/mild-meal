@@ -1,0 +1,25 @@
+.search-results-page {
+  box-sizing: border-box;
+  background-image: url(../../assets/images/mobileSearchResultsSectionBg.png);
+  width: 320px;
+  background-size: 100% 100%;
+  margin-top: 60px;
+  text-align: center;
+  padding: 20px 16px;
+
+  @media (min-width: 768px) {
+    background-image: url(../../assets/images/tabletSearchResultsSectionBg.png);
+    width: 660px;
+    height: 490px;
+    padding: 16px 82px 0;
+    margin-top: 118px;
+  }
+
+  @media (min-width: 1024px) {
+    background-image: url(../../assets/images/laptopSearchResultsSectionBg.png);
+    width: 1024px;
+    height: 510px;
+    padding: 34px 24px 0;
+    margin-top: 156px;
+  }
+}

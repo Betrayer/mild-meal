@@ -16,8 +16,7 @@ body {
 .appWrapper {
   background-image: url(../../assets/images/mobileBodyBg.png);
   width: 100vw;
-  height: 800px;
-  box-sizing: border-box;
+  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: flex-start;
