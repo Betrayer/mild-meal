@@ -1,5 +1,4 @@
 import React, { FC, useState } from "react";
-import LoginAndRegistrationSection from "../loginAndRegistrationSection/loginAndRegistrationSection";
 import ThemeChangeButton from "../themeChangeButton/themeChangeButton";
 import "./header.scss";
 
@@ -11,7 +10,6 @@ const Header: FC<HeaderProps> = ({ handleLoginButton }) => {
   const [menuIsVisible, setMenuIsVisible] = useState(false);
   const [categoriesAreOpened, setCategoriesAreOpened] = useState(false);
   const [searchIsOpened, setSearchIsOpened] = useState(true);
-  const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
 
   const handleMenuClick = () => {
     setMenuIsVisible(!menuIsVisible);

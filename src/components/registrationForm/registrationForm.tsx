@@ -3,7 +3,7 @@ import React, { FC, FormEvent } from "react";
 import "./registrationForm.scss";
 
 interface RegistrationProps {
-  handleClick: () => void;
+  switchForm: () => void;
   handleLoginButton: () => void;
 }
 
@@ -13,7 +13,7 @@ const handleSubmit = (e: FormEvent) => {
 };
 
 const RegistrationForm: FC<RegistrationProps> = ({
-  handleClick,
+  switchForm,
   handleLoginButton,
 }) => {
   return (
@@ -41,7 +41,7 @@ const RegistrationForm: FC<RegistrationProps> = ({
       </button>
       <button
         className="registration-form__buttons__login-button"
-        onClick={handleClick}
+        onClick={switchForm}
       >
         i have an account, i wanna log in
       </button>

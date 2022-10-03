@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import db from "../../configs/firebase.config";
+import { db } from "../../configs/firebase.config";
 import HomePage from "../../pages/homepage/HomePage";
 import RecipePage from "../../pages/recipePage/recipePage";
 import Header from "../header/header";
@@ -29,7 +29,7 @@ const App: FC = () => {
       )}
       {/* <HomePage /> */}
       {/* <RecipePage/> */}
-      <SearchResultsPage/>
+      <SearchResultsPage />
     </div>
   );
 };
