@@ -1,6 +1,10 @@
-import React, { FC, useState, useRef, useEffect } from "react";
+import React, { FC, FormEvent, useState } from "react";
 import LoginForm from "../loginForm/loginForm";
 import RegistrationForm from "../registrationForm/registrationForm";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { app } from "../../configs/firebase.config";
+import { LoginData } from "../../types/types";
+
 import "./loginAndRegistrationSection.scss";
 
 interface LoginAndRegistrationProps {
@@ -10,46 +14,49 @@ interface LoginAndRegistrationProps {
 const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
   handleLoginButton,
 }) => {
-  const [toggleForms, setLoginForm] = useState(true);
+  const [formSwitcher, setFormSwitcher] = useState(true);
+  const [login, setLogin] = useState<LoginData>({
+    email: "",
+    password: "",
+  });
 
-  const handleClick = () => {
-    setLoginForm(!toggleForms);
+  const switchForm = (): void => {
+    setFormSwitcher(!formSwitcher);
   };
 
-  // const bodyRef = useRef(null);
-  // const sectionRef = useRef(null);
+  const auth = getAuth(app);
 
-  // useEffect(() => {
-  //   document.addEventListener("mousedown", (e) => {
-  //     //@ts-ignore
-  //     if (sectionRef.current.contains(e.target)) {
-  //       handleLoginButton();
-  //       // console.log(e.target)
-  //     }
-  //   });
-  //   document.addEventListener("keydown", (e) => {
-  //     if (e.key === "escape") {
-  //       handleLoginButton();
-  //       console.log("123");
-  //     }
-  //   });
+  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, login.email, login.password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user); //TBD: вытащить и сохранить нужные данные
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log("ERROR:", errorCode, "ISSUE:", errorMessage);
+      });
+  };
 
-  // return () => {
-  // document.removeEventListener("mousedown", handleLoginButton);
-  // document.removeEventListener("keydown", handleLoginButton);
-  // };
-  // }, []);
+  const handleInput = (e: FormEvent<HTMLInputElement>): void => {
+    setLogin({ ...login, [e.currentTarget.name]: e.currentTarget.value });
+  };
 
   return (
     <section className="login-and-registration-section">
-      {toggleForms ? (
+      {formSwitcher ? (
         <LoginForm
-          handleClick={handleClick}
+          switchForm={switchForm}
           handleLoginButton={handleLoginButton}
+          handleFormSubmit={handleFormSubmit}
+          handleInput={handleInput}
+          login={login}
         />
       ) : (
         <RegistrationForm
-          handleClick={handleClick}
+          switchForm={switchForm}
           handleLoginButton={handleLoginButton}
         />
       )}
