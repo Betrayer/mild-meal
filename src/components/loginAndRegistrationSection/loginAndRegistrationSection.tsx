@@ -1,9 +1,11 @@
 import React, { FC, FormEvent, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import LoginForm from "../loginForm/loginForm";
 import RegistrationForm from "../registrationForm/registrationForm";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "../../configs/firebase.config";
 import { LoginData } from "../../types/types";
+import { loginResponce } from "../../redux/actions/auth";
 
 import "./loginAndRegistrationSection.scss";
 
@@ -25,12 +27,14 @@ const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
   };
 
   const auth = getAuth(app);
+  const dispatch = useDispatch();
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, login.email, login.password)
       .then((userCredential) => {
-        const user = userCredential.user;
+        const user: any = userCredential.user;
+        dispatch(loginResponce(user.accessToken));
         console.log(user); //TBD: вытащить и сохранить нужные данные
       })
       .catch((error) => {
