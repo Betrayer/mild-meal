@@ -1,4 +1,5 @@
 import { GlobalActions, SET_LOADING_STATUS } from "./../actionTypes/global";
+
 interface GlobalState {
   loading: boolean;
 }
