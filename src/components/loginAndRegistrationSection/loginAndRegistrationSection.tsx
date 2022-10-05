@@ -42,6 +42,7 @@ const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
       .then((userCredential) => {
         const user: any = userCredential.user;
         dispatch(loginResponce(user.accessToken));
+        handleLoginButton();
         console.log(user); //TBD: вытащить и сохранить нужные данные
       })
       .catch((error) => {
