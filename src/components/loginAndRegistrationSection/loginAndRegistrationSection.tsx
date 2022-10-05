@@ -1,4 +1,10 @@
-import React, { FC, FormEvent, useState } from "react";
+import React, {
+  FC,
+  FormEvent,
+  MutableRefObject,
+  useRef,
+  useState,
+} from "react";
 import { useDispatch } from "react-redux";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import LoginForm from "../loginForm/loginForm";
@@ -27,6 +33,7 @@ const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
   };
 
   const auth = getAuth(app);
+  const sectionRef = useRef(null);
   const dispatch = useDispatch();
 
   const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -48,8 +55,19 @@ const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
     setLogin({ ...login, [e.currentTarget.name]: e.currentTarget.value });
   };
 
+  const handleOutsideClick = (
+    ref: MutableRefObject<null>,
+    event: React.MouseEvent<HTMLElement, MouseEvent>
+  ): void => {
+    ref.current === event.target && handleLoginButton();
+  };
+
   return (
-    <section className="login-and-registration-section">
+    <section
+      ref={sectionRef}
+      onClick={(event) => handleOutsideClick(sectionRef, event)}
+      className="login-and-registration-section"
+    >
       {formSwitcher ? (
         <LoginForm
           switchForm={switchForm}

@@ -1,4 +1,4 @@
-import React, { FC, FormEvent } from "react";
+import React, { FC, FormEvent, useRef } from "react";
 import { LoginData } from "../../types/types";
 
 import "./loginForm.scss";
@@ -18,8 +18,14 @@ const LoginForm: FC<LoginProps> = ({
   handleInput,
   login,
 }) => {
+  const modalRef = useRef(null);
+
   return (
-    <form className="login-form" onSubmit={(e) => handleFormSubmit(e)}>
+    <form
+      ref={modalRef}
+      className="login-form"
+      onSubmit={(e) => handleFormSubmit(e)}
+    >
       <div className="login-form__close-button" onClick={handleLoginButton} />
       <span className="login-form__title">login form</span>
       <input
