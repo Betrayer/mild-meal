@@ -1,4 +1,4 @@
-import React, { FC, FormEvent } from "react";
+import React, { FC, FormEvent, useRef } from "react";
 
 import "./registrationForm.scss";
 
@@ -16,8 +16,13 @@ const RegistrationForm: FC<RegistrationProps> = ({
   switchForm,
   handleLoginButton,
 }) => {
+  const modalRef = useRef(null);
   return (
-    <form className="registration-form" onSubmit={(e) => handleSubmit(e)}>
+    <form
+      ref={modalRef}
+      className="registration-form"
+      onSubmit={(e) => handleSubmit(e)}
+    >
       <div
         className="registration-form__close-button"
         onClick={handleLoginButton}
