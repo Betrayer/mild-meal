@@ -1,6 +1,8 @@
 import React, { FC, useState } from "react";
-import LoginAndRegistrationSection from "../loginAndRegistrationSection/loginAndRegistrationSection";
-import ThemeChangeButton from "../themeChangeButton/themeChangeButton";
+import LoginButton from "../loginButton/loginButton";
+import MobileMenuSection from "../mobileMenuSection/mobileMenuSection";
+import Searchbar from "../searchbar/searchbar";
+import Taglist from "../taglist/taglist";
 import "./header.scss";
 
 interface HeaderProps {
@@ -9,21 +11,26 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({ handleLoginButton }) => {
   const [menuIsVisible, setMenuIsVisible] = useState(false);
-  const [categoriesAreOpened, setCategoriesAreOpened] = useState(false);
-  const [searchIsOpened, setSearchIsOpened] = useState(true);
-  const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
+  const [inputIsVisible, setInputIsVisible] = useState(true);
+  const [inputValue, setInputValue] = useState("");
 
   const handleMenuClick = () => {
     setMenuIsVisible(!menuIsVisible);
   };
 
-  const handleCategoriesAndSearchClick = () => {
-    setCategoriesAreOpened(!categoriesAreOpened);
-    setSearchIsOpened(!searchIsOpened);
+  const handleSearchSubmit = (e: React.FormEvent): void => {
+    e.preventDefault();
+    alert(inputValue);
   };
 
-  const searchAlert = () => {
-    alert("Search!");
+  const handleSearchButton = (e: React.FormEvent): void => {
+    e.preventDefault();
+    inputIsVisible ? alert(inputValue) : setInputIsVisible(true);
+  };
+
+  const handleTagsOpeningButton = (e: React.FormEvent): void => {
+    e.preventDefault();
+    setInputIsVisible(false);
   };
 
   return (
@@ -40,40 +47,35 @@ const Header: FC<HeaderProps> = ({ handleLoginButton }) => {
         onClick={handleMenuClick}
       ></div>
 
-      <div
-        className={`header_categories-button_wrapper wrapper ${
-          categoriesAreOpened ? "openedCategories" : ""
-        }`}
-      >
-        <div
-          className={`header_categories-button ${
-            categoriesAreOpened ? "hiddenElement" : ""
-          }`}
-          onClick={
-            !categoriesAreOpened ? handleCategoriesAndSearchClick : undefined
-          }
-        ></div>
+      {window.innerWidth >= 768 && (
+        <Taglist
+          handleTagsOpeningButton={handleTagsOpeningButton}
+          inputIsVisible={inputIsVisible}
+        />
+      )}
+
+      {window.innerWidth >= 768 && (
+        <Searchbar
+          handleSearchSubmit={handleSearchSubmit}
+          handleSearchButton={handleSearchButton}
+          inputIsVisible={inputIsVisible}
+          setInputValue={setInputValue}
+        />
+      )}
+      <div className="login-button_wrapper wrapper">
+        <LoginButton handleLoginButton={handleLoginButton} />
       </div>
 
-      <div
-        className={`header_search-form_wrapper wrapper ${
-          searchIsOpened ? "openedSearch" : ""
-        }`}
-      >
-        <div
-          className="header_search-form"
-          onClick={
-            searchIsOpened ? searchAlert : handleCategoriesAndSearchClick
-          }
-        ></div>
-      </div>
-
-      <div className="header_login-button_wrapper wrapper">
-        <span className="header_login-button" onClick={handleLoginButton}>
-          log in
-        </span>
-        <ThemeChangeButton />
-      </div>
+      {menuIsVisible && (
+        <MobileMenuSection
+          handleTagsOpeningButton={handleTagsOpeningButton}
+          handleSearchSubmit={handleSearchSubmit}
+          handleSearchButton={handleSearchButton}
+          inputIsVisible={inputIsVisible}
+          setInputValue={setInputValue}
+          handleLoginButton={handleLoginButton}
+        />
+      )}
     </header>
   );
 };

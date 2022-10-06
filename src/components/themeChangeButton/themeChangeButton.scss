@@ -20,7 +20,7 @@
 }
 
 .theme-change-button {
-  display: none;
+  cursor: pointer;
 
   @media (min-width: 768px) {
     left: 50%;
@@ -30,8 +30,7 @@
     width: 66px;
     height: 44px;
     background-size: cover;
-    top: 32px;
-    cursor: pointer;
+    top: 33px;
 
     .tooltip {
       user-select: none;
@@ -49,9 +48,13 @@
   }
 }
 .dark_theme {
-  background-image: url(../../assets/images/chameleon.png);
+  @media (min-width: 768px) {
+    background-image: url(../../assets/images/chameleon.png);
+  }
 }
 
 .light_theme {
-  background-image: url(../../assets/images/chameleon2.png);
+  @media (min-width: 768px) {
+    background-image: url(../../assets/images/chameleon2.png);
+  }
 }

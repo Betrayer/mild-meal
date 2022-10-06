@@ -1,4 +1,4 @@
-import React, { FC, useState, useRef, useEffect } from "react";
+import React, { FC, useState } from "react";
 import LoginForm from "../loginForm/loginForm";
 import RegistrationForm from "../registrationForm/registrationForm";
 import "./loginAndRegistrationSection.scss";
@@ -15,30 +15,6 @@ const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
   const handleClick = () => {
     setLoginForm(!toggleForms);
   };
-
-  // const bodyRef = useRef(null);
-  // const sectionRef = useRef(null);
-
-  // useEffect(() => {
-  //   document.addEventListener("mousedown", (e) => {
-  //     //@ts-ignore
-  //     if (sectionRef.current.contains(e.target)) {
-  //       handleLoginButton();
-  //       // console.log(e.target)
-  //     }
-  //   });
-  //   document.addEventListener("keydown", (e) => {
-  //     if (e.key === "escape") {
-  //       handleLoginButton();
-  //       console.log("123");
-  //     }
-  //   });
-
-  // return () => {
-  // document.removeEventListener("mousedown", handleLoginButton);
-  // document.removeEventListener("keydown", handleLoginButton);
-  // };
-  // }, []);
 
   return (
     <section className="login-and-registration-section">

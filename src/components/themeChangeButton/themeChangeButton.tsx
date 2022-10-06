@@ -8,14 +8,14 @@ const ThemeChangeButton: FC = () => {
   };
 
   return (
-      <div
-        className={`theme-change-button ${
-          darkTheme ? "dark_theme" : "light_theme"
-        }`}
-        onClick={handleClick}
-      >
-        <span className="tooltip">Change theme</span>
-      </div>
+    <div
+      className={`theme-change-button ${
+        darkTheme ? "dark_theme" : "light_theme"
+      }`}
+      onClick={handleClick}
+    >
+      <span className="tooltip">Change theme</span>
+    </div>
   );
 };
 
