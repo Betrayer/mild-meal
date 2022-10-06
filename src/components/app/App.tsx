@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import db from "../../configs/firebase.config";
+import { db } from "../../configs/firebase.config";
 import Header from "../header/header";
 import HomePage from "../../pages/homepage/HomePage";
 import LoginAndRegistrationSection from "../loginAndRegistrationSection/loginAndRegistrationSection";

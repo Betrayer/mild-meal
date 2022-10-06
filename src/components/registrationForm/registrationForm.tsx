@@ -1,9 +1,9 @@
-import React, { FC, FormEvent } from "react";
+import React, { FC, FormEvent, useRef } from "react";
 
 import "./registrationForm.scss";
 
 interface RegistrationProps {
-  handleClick: () => void;
+  switchForm: () => void;
   handleLoginButton: () => void;
 }
 
@@ -13,11 +13,16 @@ const handleSubmit = (e: FormEvent) => {
 };
 
 const RegistrationForm: FC<RegistrationProps> = ({
-  handleClick,
+  switchForm,
   handleLoginButton,
 }) => {
+  const modalRef = useRef(null);
   return (
-    <form className="registration-form" onSubmit={(e) => handleSubmit(e)}>
+    <form
+      ref={modalRef}
+      className="registration-form"
+      onSubmit={(e) => handleSubmit(e)}
+    >
       <div
         className="registration-form__close-button"
         onClick={handleLoginButton}
@@ -41,7 +46,7 @@ const RegistrationForm: FC<RegistrationProps> = ({
       </button>
       <button
         className="registration-form__buttons__login-button"
-        onClick={handleClick}
+        onClick={switchForm}
       >
         i have an account, i wanna log in
       </button>

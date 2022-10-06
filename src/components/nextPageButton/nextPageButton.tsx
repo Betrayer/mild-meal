@@ -2,8 +2,9 @@ import React from 'react'
 
 import "./nextPageButton.scss";
 
-const handleClick = () => {
-    alert ("next page!")
+const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    // alert ("next page!")
 }
 
 const NextPageButton = () => {

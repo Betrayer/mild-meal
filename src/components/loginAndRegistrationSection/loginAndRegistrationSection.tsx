@@ -1,6 +1,18 @@
-import React, { FC, useState } from "react";
+import React, {
+  FC,
+  FormEvent,
+  MutableRefObject,
+  useRef,
+  useState,
+} from "react";
+import { useDispatch } from "react-redux";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import LoginForm from "../loginForm/loginForm";
 import RegistrationForm from "../registrationForm/registrationForm";
+import { app } from "../../configs/firebase.config";
+import { LoginData } from "../../types/types";
+import { loginResponce } from "../../redux/actions/auth";
+
 import "./loginAndRegistrationSection.scss";
 
 interface LoginAndRegistrationProps {
@@ -10,22 +22,64 @@ interface LoginAndRegistrationProps {
 const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
   handleLoginButton,
 }) => {
-  const [toggleForms, setLoginForm] = useState(true);
+  const [formSwitcher, setFormSwitcher] = useState(true);
+  const [login, setLogin] = useState<LoginData>({
+    email: "",
+    password: "",
+  });
 
-  const handleClick = () => {
-    setLoginForm(!toggleForms);
+  const switchForm = (): void => {
+    setFormSwitcher(!formSwitcher);
+  };
+
+  const auth = getAuth(app);
+  const sectionRef = useRef(null);
+  const dispatch = useDispatch();
+
+  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, login.email, login.password)
+      .then((userCredential) => {
+        const user: any = userCredential.user;
+        dispatch(loginResponce(user.accessToken));
+        handleLoginButton();
+        console.log(user); //TBD: вытащить и сохранить нужные данные
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log("ERROR:", errorCode, "ISSUE:", errorMessage);
+      });
+  };
+
+  const handleInput = (e: FormEvent<HTMLInputElement>): void => {
+    setLogin({ ...login, [e.currentTarget.name]: e.currentTarget.value });
+  };
+
+  const handleOutsideClick = (
+    ref: MutableRefObject<null>,
+    event: React.MouseEvent<HTMLElement, MouseEvent>
+  ): void => {
+    ref.current === event.target && handleLoginButton();
   };
 
   return (
-    <section className="login-and-registration-section">
-      {toggleForms ? (
+    <section
+      ref={sectionRef}
+      onClick={(event) => handleOutsideClick(sectionRef, event)}
+      className="login-and-registration-section"
+    >
+      {formSwitcher ? (
         <LoginForm
-          handleClick={handleClick}
+          switchForm={switchForm}
           handleLoginButton={handleLoginButton}
+          handleFormSubmit={handleFormSubmit}
+          handleInput={handleInput}
+          login={login}
         />
       ) : (
         <RegistrationForm
-          handleClick={handleClick}
+          switchForm={switchForm}
           handleLoginButton={handleLoginButton}
         />
       )}
