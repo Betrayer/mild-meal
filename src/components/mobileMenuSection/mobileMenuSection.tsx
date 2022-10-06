@@ -46,7 +46,7 @@ const MobileMenuSection: FC<MobileMenuProps> = ({
           <label>{tagsAreOpened ? "▲" : "▼"}</label>search by categories
         </button>
       </li>
-      {tagsAreOpened && <TaglistWrapper />}
+      {tagsAreOpened && <li><TaglistWrapper /></li>}
       <li className="mobile-menu-item">
         <ThemeChangeButton />
       </li>

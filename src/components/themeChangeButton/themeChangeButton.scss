@@ -20,9 +20,9 @@
 }
 
 .theme-change-button {
-  cursor: pointer;
-
+  
   @media (min-width: 768px) {
+    cursor: pointer;
     left: 50%;
     transform: translateX(-50%);
     position: absolute;
