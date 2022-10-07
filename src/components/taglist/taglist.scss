@@ -1,0 +1,50 @@
+@keyframes rotating {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.taglist {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  margin-top: 22px;
+  align-items: flex-end;
+
+  @media (min-width: 768px) {
+    margin-top: 0;
+    flex-direction: row;
+    max-width: 490px;
+    background: none;
+    background-image: url(../../assets/images/searchbarBg.png);
+    background-position: center;
+    height: 60px;
+    border-radius: 50px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 568px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-button {
+    @media (min-width: 768px) {
+      height: 60px;
+      width: 64px;
+      background: url(../../assets/images/taglistbutton.png) no-repeat center;
+      padding: 0;
+      border: none;
+      border-radius: 50px;
+      display: block;
+
+      &:hover {
+        animation: rotating 2s linear infinite;
+      }
+    }
+  }
+}

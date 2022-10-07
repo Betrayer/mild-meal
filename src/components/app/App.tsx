@@ -1,11 +1,11 @@
 import React, { FC, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../configs/firebase.config";
-import HomePage from "../../pages/homepage/HomePage";
-import RecipePage from "../../pages/recipePage/recipePage";
 import Header from "../header/header";
+import HomePage from "../../pages/homepage/HomePage";
 import LoginAndRegistrationSection from "../loginAndRegistrationSection/loginAndRegistrationSection";
 import "./index.scss";
+import RecipePage from "../../pages/recipePage/recipePage";
 import SearchResultsPage from "../../pages/searchResultsPage/searchResultsPage";
 
 const App: FC = () => {
@@ -27,9 +27,9 @@ const App: FC = () => {
       {showLoginModal && (
         <LoginAndRegistrationSection handleLoginButton={handleLoginButton} />
       )}
-      {/* <HomePage /> */}
+      <HomePage />
       {/* <RecipePage/> */}
-      <SearchResultsPage />
+      {/* <SearchResultsPage/> */}
     </div>
   );
 };
