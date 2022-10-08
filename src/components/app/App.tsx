@@ -27,9 +27,9 @@ const App: FC = () => {
       {showLoginModal && (
         <LoginAndRegistrationSection handleLoginButton={handleLoginButton} />
       )}
-      <HomePage />
+      {/* <HomePage /> */}
       {/* <RecipePage/> */}
-      {/* <SearchResultsPage/> */}
+      <SearchResultsPage/>
     </div>
   );
 };
