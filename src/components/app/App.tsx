@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../configs/firebase.config";
 import Header from "../header/header";
-import HomePage from "../../pages/homepage/HomePage";
 import LoginAndRegistrationSection from "../loginAndRegistrationSection/loginAndRegistrationSection";
 
 import "./index.scss";

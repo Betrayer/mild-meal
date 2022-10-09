@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import LoginButton from "../loginButton/loginButton";
 import MobileMenuSection from "../mobileMenuSection/mobileMenuSection";
 import Searchbar from "../searchbar/searchbar";
@@ -14,7 +15,9 @@ const Header: FC<HeaderProps> = ({ handleLoginButton }) => {
   const [inputIsVisible, setInputIsVisible] = useState(true);
   const [inputValue, setInputValue] = useState("");
 
-  const handleMenuClick = () => {
+  const navigate = useNavigate();
+
+  const handleMenuClick = (): void => {
     setMenuIsVisible(!menuIsVisible);
   };
 
@@ -33,8 +36,12 @@ const Header: FC<HeaderProps> = ({ handleLoginButton }) => {
     setInputIsVisible(false);
   };
 
+  const logoRedirect = (): void => {
+    navigate("/");
+  };
+
   return (
-    <header className="header">
+    <header className="header" onClick={logoRedirect}>
       <div className="header_logo">
         <span className="header_logo-name">mildmeal</span>
         <span className="header_logo-tagline">your best kitchen assistant</span>

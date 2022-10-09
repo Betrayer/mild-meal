@@ -13,6 +13,7 @@ const TaglistWrapper: FC = () => {
       taglistRef.current.scrollLeft += e.deltaY / 10;
     });
   }, []);
+  
   return (
     <div ref={taglistRef} className="taglist-wrapper">
       <ul className="taglist-list">
