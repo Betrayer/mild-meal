@@ -1,0 +1,227 @@
+.taglist {
+  &-wrapper {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    box-sizing: border-box;
+
+    @media (min-width: 768px) {
+      justify-content: start;
+      width: 48vw;
+      height: 60px;
+      padding: 0 16px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      border-radius: 50px;
+      float: left;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      border-radius: 0;
+      width: fit-content;
+      display: flex;
+      justify-content: center;
+      height: 60px;
+    }
+  }
+
+  &-list {
+    margin: 8px 0 0;
+    list-style: none;
+    width: 270px;
+    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: space-between;
+
+    @media (min-width: 768px) {
+      display: flex;
+      margin: 10px 0 0;
+      list-style: none;
+      width: fit-content;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+
+    @media (min-width: 1024px) {
+      width: fit-content;
+      justify-content: space-around;
+    }
+
+    &-item {
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: 0.5s;
+      position: relative;
+      display: flex;
+      justify-content: center;
+
+      &::before {
+        bottom: -6px;
+        position: absolute;
+        font-size: 6px;
+        text-align: center;
+        width: 120%;
+        transition: 0.5s;
+
+        @media (min-width: 768px) {
+          top: 0;
+        }
+      }
+
+      &:hover {
+        scale: 110%;
+
+        &::before {
+          bottom: 14px;
+          background-color: rgb(0, 0, 0);
+          color: white;
+          font-size: 7px;
+          line-height: 8px;
+          box-sizing: border-box;
+          padding: 0.1rem 0;
+          border-radius: 50px;
+          transform: rotate(-360deg);
+
+          @media (min-width: 768px) {
+            top: 14px;
+            left: -14px;
+          }
+        }
+      }
+
+      @media (min-width: 768px) {
+        width: 40px;
+        height: 40px;
+
+        &::before {
+          position: absolute;
+          bottom: 16px;
+          transform: translate(-50%);
+          line-height: 8px;
+          letter-spacing: -0.06em;
+          width: 60px;
+          rotate: 45deg;
+          opacity: 0;
+          left: 26%;
+          font-size: 2px;
+        }
+
+        &:hover {
+          &::before {
+            opacity: 100%;
+            bottom: 38px;
+            rotate: -45deg;
+            font-size: 10px;
+            background-color: transparent;
+            color: black;
+          }
+        }
+      }
+
+      &:nth-child(1) {
+        background-image: url(../../../assets/images/tags/appetizer.png);
+        &::before {
+          content: "appetizer";
+        }
+      }
+
+      &:nth-child(2) {
+        background-image: url(../../../assets/images/tags/soup.png);
+        &::before {
+          content: "soup";
+        }
+      }
+
+      &:nth-child(3) {
+        background-image: url(../../../assets/images/tags/main_dish.png);
+        &::before {
+          content: "main dish";
+        }
+      }
+
+      &:nth-child(4) {
+        background-image: url(../../../assets/images/tags/breakfast.png);
+        &::before {
+          content: "breakfast";
+        }
+      }
+
+      &:nth-child(5) {
+        background-image: url(../../../assets/images/tags/lunch.png);
+        &::before {
+          content: "lunch";
+        }
+      }
+
+      &:nth-child(6) {
+        background-image: url(../../../assets/images/tags/salad.png);
+        &::before {
+          content: "salad";
+        }
+      }
+
+      &:nth-child(7) {
+        background-image: url(../../../assets/images/tags/side_dish.png);
+        &::before {
+          content: "side dish";
+        }
+      }
+
+      &:nth-child(8) {
+        background-image: url(../../../assets/images/tags/snack.png);
+        &::before {
+          content: "snack";
+        }
+      }
+
+      &:nth-child(9) {
+        background-image: url(../../../assets/images/tags/dessert.png);
+        &::before {
+          content: "dessert";
+        }
+      }
+
+      &:nth-child(10) {
+        background-image: url(../../../assets/images/tags/bakery.png);
+        &::before {
+          content: "bakery";
+        }
+      }
+
+      &:nth-child(11) {
+        background-image: url(../../../assets/images/tags/drinks.png);
+        &::before {
+          content: "drinks";
+        }
+      }
+      &:nth-child(12) {
+        background-image: url(../../../assets/images/tags/sauces.png);
+        &::before {
+          content: "sauces";
+        }
+      }
+    }
+
+    &-item:not(:last-child) {
+      @media (min-width: 768px) {
+        margin-right: 4px;
+      }
+
+      @media (min-width: 1024px) {
+        margin-right: 5px;
+      }
+    }
+  }
+}

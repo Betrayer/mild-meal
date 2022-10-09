@@ -5,7 +5,8 @@
 
 @font-face {
   font-family: "Ovsyanka Press";
-  src: local(Ovsyanka Press), url(../../assets/fonts/Ovsyanka_Press.ttf) format("truetype");
+  src: local(Ovsyanka Press),
+    url(../../assets/fonts/Ovsyanka_Press.ttf) format("truetype");
 }
 
 body {
@@ -32,7 +33,7 @@ body {
     background-position: center;
     height: 636px;
   }
-  
+
   @media (min-width: 1024px) {
     background-image: url(../../assets/images/laptopBodyBg.png);
     background-size: contain;

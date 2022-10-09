@@ -3,9 +3,15 @@ import { Routes, Route } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../configs/firebase.config";
 import Header from "../header/header";
+import HomePage from "../../pages/homepage/HomePage";
 import LoginAndRegistrationSection from "../loginAndRegistrationSection/loginAndRegistrationSection";
 
 import "./index.scss";
+<<<<<<< HEAD
+=======
+import RecipePage from "../../pages/recipePage/recipePage";
+import SearchResultsPage from "../../pages/searchResultsPage/searchResultsPage";
+>>>>>>> 43b6ca2db9cbf552f0215645fbe2a01c9cbed512
 
 const App: FC = () => {
   const HomePage = React.lazy(() => import("../../pages/homepage/HomePage"));

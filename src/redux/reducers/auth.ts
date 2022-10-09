@@ -1,4 +1,8 @@
-import { AuthActions, LOGIN_RESPONCE } from "../actionTypes/auth";
+import {
+  AuthActions,
+  LOGIN_RESPONCE,
+  REGISTER_RESPONCE,
+} from "../actionTypes/auth";
 
 interface AuthState {
   user: {
@@ -18,6 +22,14 @@ export const authReducer = (
 ): AuthState => {
   switch (action.type) {
     case LOGIN_RESPONCE:
+      return {
+        ...state,
+        user: {
+          accessToken: action.payload,
+        },
+      };
+
+    case REGISTER_RESPONCE:
       return {
         ...state,
         user: {

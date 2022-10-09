@@ -1,8 +1,13 @@
-export type LoginData = {
-  email: string;
-  password: string;
+export type LoginResponce = {
+  accessToken: string;
 };
 
-export type LoginResponce = {
+export type AuthData = {
+  email: string;
+  password: string;
+  passwordConfirmation: string;
+};
+
+export type RegisterResponce = {
   accessToken: string;
 };

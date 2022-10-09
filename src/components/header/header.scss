@@ -39,7 +39,6 @@
   .openedSearch {
     @media (min-width: 768px) {
       width: calc(100% - 440px);
-      background-color: rgba(228, 76, 233, 0.195);
     }
 
     @media (min-width: 1024px) {
@@ -140,9 +139,7 @@
     }
   }
 
-  &_login-button {
-    display: none;
-
+  .login-button {
     @media (min-width: 768px) {
       width: 80px;
       text-align: center;
@@ -152,15 +149,15 @@
       font-family: "Ovsyanka Press", sans-serif;
       font-size: 24px;
       letter-spacing: -0.1em;
+      position: relative;
+      &_wrapper {
+        position: relative;
+      }
     }
 
     @media (min-width: 1024px) {
       width: 86px;
       // margin-right: 24px;
-    }
-
-    &_wrapper {
-      position: relative;
     }
   }
 }

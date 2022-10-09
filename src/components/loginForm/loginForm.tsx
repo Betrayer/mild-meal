@@ -1,22 +1,22 @@
 import React, { FC, FormEvent, useRef } from "react";
-import { LoginData } from "../../types/types";
+import { AuthData } from "../../types/types";
 
 import "./loginForm.scss";
 
 interface LoginProps {
   switchForm: () => void;
   handleLoginButton: () => void;
-  handleFormSubmit: (e: FormEvent<HTMLFormElement>) => void;
-  handleInput: (e: FormEvent<HTMLInputElement>) => void;
-  login: LoginData;
+  handleLoginFormSubmit: (e: FormEvent<HTMLFormElement>) => void;
+  handleAuthInput: (e: FormEvent<HTMLInputElement>) => void;
+  authCredentials: AuthData;
 }
 
 const LoginForm: FC<LoginProps> = ({
   switchForm,
   handleLoginButton,
-  handleFormSubmit,
-  handleInput,
-  login,
+  handleLoginFormSubmit,
+  handleAuthInput,
+  authCredentials,
 }) => {
   const modalRef = useRef(null);
 
@@ -24,7 +24,7 @@ const LoginForm: FC<LoginProps> = ({
     <form
       ref={modalRef}
       className="login-form"
-      onSubmit={(e) => handleFormSubmit(e)}
+      onSubmit={(e) => handleLoginFormSubmit(e)}
     >
       <div className="login-form__close-button" onClick={handleLoginButton} />
       <span className="login-form__title">login form</span>
@@ -33,16 +33,16 @@ const LoginForm: FC<LoginProps> = ({
         type="email"
         name="email"
         placeholder="email"
-        value={login.email}
-        onChange={handleInput}
+        value={authCredentials.email}
+        onChange={handleAuthInput}
       />
       <input
         required
         type="password"
         name="password"
         placeholder="password"
-        value={login.password}
-        onChange={handleInput}
+        value={authCredentials.password}
+        onChange={handleAuthInput}
       />
       <button className="login-form__buttons__login-button" type="submit">
         login
