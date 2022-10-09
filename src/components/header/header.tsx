@@ -33,6 +33,8 @@ const Header: FC<HeaderProps> = ({ handleLoginButton }) => {
     setInputIsVisible(false);
   };
 
+  
+
   return (
     <header className="header">
       <div className="header_logo">

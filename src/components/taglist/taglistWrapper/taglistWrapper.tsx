@@ -1,9 +1,12 @@
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 
 import "./taglistWrapper.scss";
 
+import { tagsArray } from "../../../assets/variables/taglist";
+
 const TaglistWrapper: FC = () => {
   const taglistRef = useRef(null);
+  const [currentTag, setCurrentTag] = useState("");
 
   useEffect(() => {
     //@ts-ignore
@@ -13,21 +16,24 @@ const TaglistWrapper: FC = () => {
       taglistRef.current.scrollLeft += e.deltaY / 10;
     });
   }, []);
+
+  const handleTagClick = (e: any) => {
+    setCurrentTag(e.currentTarget.getAttribute("value"))
+    alert (e.currentTarget.getAttribute("value"));
+  };
   return (
     <div ref={taglistRef} className="taglist-wrapper">
       <ul className="taglist-list">
-        <li className="taglist-list-item"></li>
-        <li className="taglist-list-item"></li>
-        <li className="taglist-list-item"></li>
-        <li className="taglist-list-item"></li>
-        <li className="taglist-list-item"></li>
-        <li className="taglist-list-item"></li>
-        <li className="taglist-list-item"></li>
-        <li className="taglist-list-item"></li>
-        <li className="taglist-list-item"></li>
-        <li className="taglist-list-item"></li>
-        <li className="taglist-list-item"></li>
-        <li className="taglist-list-item"></li>
+        {tagsArray.map((tag, index) => (
+          <li
+            key={index}
+            value={tag.value}
+            className="taglist-list-item"
+            onClick={(e) => handleTagClick(e)}
+          >
+            <img src={tag.img} alt={tag.img}></img>
+          </li>
+        ))}
       </ul>
     </div>
   );
