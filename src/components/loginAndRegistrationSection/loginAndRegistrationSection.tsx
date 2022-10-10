@@ -54,8 +54,6 @@ const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
         dispatch(loginResponce(user.accessToken));
         dispatch(isAuth(true));
         handleLoginButton();
-        console.log(user);
-        console.log(user.accessToken); //TBD: вытащить и сохранить нужные данные
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -76,7 +74,6 @@ const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
           const user: any = userCredential.user;
           dispatch(registerResponce(user.accessToken));
           handleLoginButton();
-          console.log(user); //TBD: вытащить и сохранить нужные данные
         })
         .catch((error) => {
           const errorCode = error.code;

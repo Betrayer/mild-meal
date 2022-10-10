@@ -8,7 +8,6 @@ import "./header.scss";
 
 interface HeaderProps {
   handleLoginButton: () => void;
-  // setUserToken: () => string;
 }
 
 const Header: FC<HeaderProps> = ({ handleLoginButton }) => {
