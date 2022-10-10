@@ -27,6 +27,8 @@ const App: FC = () => {
   // };
   const [showLoginModal, setShowLoginModal] = useState(false);
 
+  // const [userToken, setUserToken] = useState("");
+
   const handleLoginButton = () => {
     setShowLoginModal(!showLoginModal);
   };
