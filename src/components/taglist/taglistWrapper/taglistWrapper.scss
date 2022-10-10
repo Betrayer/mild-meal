@@ -67,6 +67,11 @@
       display: flex;
       justify-content: center;
 
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+
       &::before {
         bottom: -6px;
         position: absolute;
@@ -131,83 +136,71 @@
       }
 
       &:nth-child(1) {
-        background-image: url(../../../assets/images/tags/appetizer.png);
         &::before {
           content: "appetizer";
         }
       }
 
       &:nth-child(2) {
-        background-image: url(../../../assets/images/tags/soup.png);
         &::before {
           content: "soup";
         }
       }
 
       &:nth-child(3) {
-        background-image: url(../../../assets/images/tags/main_dish.png);
         &::before {
           content: "main dish";
         }
       }
 
       &:nth-child(4) {
-        background-image: url(../../../assets/images/tags/breakfast.png);
         &::before {
           content: "breakfast";
         }
       }
 
       &:nth-child(5) {
-        background-image: url(../../../assets/images/tags/lunch.png);
         &::before {
           content: "lunch";
         }
       }
 
       &:nth-child(6) {
-        background-image: url(../../../assets/images/tags/salad.png);
         &::before {
           content: "salad";
         }
       }
 
       &:nth-child(7) {
-        background-image: url(../../../assets/images/tags/side_dish.png);
         &::before {
           content: "side dish";
         }
       }
 
       &:nth-child(8) {
-        background-image: url(../../../assets/images/tags/snack.png);
         &::before {
           content: "snack";
         }
       }
 
       &:nth-child(9) {
-        background-image: url(../../../assets/images/tags/dessert.png);
         &::before {
           content: "dessert";
         }
       }
 
       &:nth-child(10) {
-        background-image: url(../../../assets/images/tags/bakery.png);
         &::before {
           content: "bakery";
         }
       }
 
       &:nth-child(11) {
-        background-image: url(../../../assets/images/tags/drinks.png);
         &::before {
           content: "drinks";
         }
       }
       &:nth-child(12) {
-        background-image: url(../../../assets/images/tags/sauces.png);
         &::before {
           content: "sauces";
         }
@@ -220,7 +213,7 @@
       }
 
       @media (min-width: 1024px) {
-        margin-right: 5px;
+        margin-right: 6px;
       }
     }
   }
