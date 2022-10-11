@@ -2,18 +2,21 @@ import {
   AuthActions,
   LOGIN_RESPONCE,
   REGISTER_RESPONCE,
+  IS_AUTH,
 } from "../actionTypes/auth";
 
 interface AuthState {
   user: {
     accessToken: string;
   };
+  isAuth: boolean;
 }
 
 const initialState: AuthState = {
   user: {
     accessToken: "",
   },
+  isAuth: false,
 };
 
 export const authReducer = (
@@ -35,6 +38,12 @@ export const authReducer = (
         user: {
           accessToken: action.payload,
         },
+      };
+
+    case IS_AUTH:
+      return {
+        ...state,
+        isAuth: action.payload,
       };
     default:
       return state;

@@ -1,5 +1,6 @@
 export const LOGIN_RESPONCE = "LOGIN_RESPONCE";
 export const REGISTER_RESPONCE = "REGISTER_RESPONCE";
+export const IS_AUTH = "IS_AUTH"
 
 export type LoginResponceAction = {
   type: typeof LOGIN_RESPONCE;
@@ -11,4 +12,10 @@ export type RegisterResponceAction = {
   payload: string;
 };
 
-export type AuthActions = LoginResponceAction | RegisterResponceAction ;
+export type IsAuthAction = {
+  type: typeof IS_AUTH;
+  payload: boolean;
+}
+
+
+export type AuthActions = LoginResponceAction | RegisterResponceAction | IsAuthAction;

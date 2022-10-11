@@ -15,7 +15,7 @@ import LoginForm from "../loginForm/loginForm";
 import RegistrationForm from "../registrationForm/registrationForm";
 import { app } from "../../configs/firebase.config";
 import { AuthData } from "../../types/types";
-import { loginResponce, registerResponce } from "../../redux/actions/auth";
+import { loginResponce, registerResponce, isAuth } from "../../redux/actions/auth";
 
 import "./loginAndRegistrationSection.scss";
 
@@ -44,12 +44,16 @@ const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
 
   const handleLoginFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, authCredentials.email, authCredentials.password)
+    signInWithEmailAndPassword(
+      auth,
+      authCredentials.email,
+      authCredentials.password, 
+    )
       .then((userCredential) => {
         const user: any = userCredential.user;
         dispatch(loginResponce(user.accessToken));
+        dispatch(isAuth(true));
         handleLoginButton();
-        console.log(user); //TBD: вытащить и сохранить нужные данные
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -61,12 +65,15 @@ const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
   const handleRegistrationFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     authCredentials.passwordConfirmation === authCredentials.password &&
-      createUserWithEmailAndPassword(auth, authCredentials.email, authCredentials.password)
+      createUserWithEmailAndPassword(
+        auth,
+        authCredentials.email,
+        authCredentials.password
+      )
         .then((userCredential) => {
           const user: any = userCredential.user;
           dispatch(registerResponce(user.accessToken));
           handleLoginButton();
-          console.log(user); //TBD: вытащить и сохранить нужные данные
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -76,7 +83,10 @@ const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
   };
 
   const handleAuthInput = (e: FormEvent<HTMLInputElement>): void => {
-    setAuthCredentials({ ...authCredentials, [e.currentTarget.name]: e.currentTarget.value });
+    setAuthCredentials({
+      ...authCredentials,
+      [e.currentTarget.name]: e.currentTarget.value,
+    });
   };
 
   const handleOutsideClick = (
