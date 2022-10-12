@@ -9,11 +9,19 @@
   padding: 24px 6px 0;
   background-repeat: no-repeat;
 
+  &.dark {
+    background-image: url(../../assets/images/mobileRecipeDescriptionSectionBg_dark.png);
+  }
+
   @media (min-width: 768px) {
     background-image: url(../../assets/images/tabletRecipeDescriptionSectionBg.png);
     width: 440px;
     height: 500px;
     padding: 24px 10px 0;
+
+    &.dark {
+      background-image: url(../../assets/images/tabletRecipeDescriptionSectionBg_dark.png);
+    }
   }
 
   &__content {
@@ -46,7 +54,7 @@
         }
       }
     }
-    
+
     &__button {
       text-align: center;
       text-decoration: underline;

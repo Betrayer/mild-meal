@@ -9,6 +9,10 @@
   flex-direction: column;
   position: relative;
 
+  &.dark {
+    background-image: url(../../assets/images/mobileRecipeNutritionsSectionBg_dark.png);
+  }
+
   @media (min-width: 768px) {
     background-image: url(../../assets/images/tabletRecipeNutritionsSectionBg.png);
     height: 500px;
@@ -16,6 +20,10 @@
     margin: 0;
     padding: 40px 26px 0 18px;
     flex-direction: row;
+
+    &.dark {
+      background-image: url(../../assets/images/tabletRecipeNutritionsSectionBg_dark.png);
+    }
   }
 
   &__content {

@@ -1,4 +1,6 @@
 import React, { FC, FormEvent, useRef } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/rootReducer";
 import { AuthData } from "../../types/types";
 
 import "./loginForm.scss";
@@ -20,15 +22,20 @@ const LoginForm: FC<LoginProps> = ({
 }) => {
   const modalRef = useRef(null);
 
+  const currentThemeColor = useSelector(
+    (state: RootState) => state.global.themeColor
+  );
+
   return (
     <form
       ref={modalRef}
-      className="login-form"
+      className={`login-form ${currentThemeColor}`}
       onSubmit={(e) => handleLoginFormSubmit(e)}
     >
       <div className="login-form__close-button" onClick={handleLoginButton} />
       <span className="login-form__title">login form</span>
       <input
+        className={`${currentThemeColor}`}
         required
         type="email"
         name="email"
@@ -37,6 +44,7 @@ const LoginForm: FC<LoginProps> = ({
         onChange={handleAuthInput}
       />
       <input
+        className={`${currentThemeColor}`}
         required
         type="password"
         name="password"
@@ -44,11 +52,18 @@ const LoginForm: FC<LoginProps> = ({
         value={authCredentials.password}
         onChange={handleAuthInput}
       />
-      <button className="login-form__buttons__login-button" type="submit">
+      <button
+        className={`login-form__buttons__login-button ${
+          currentThemeColor ? "dark" : ""
+        }`}
+        type="submit"
+      >
         login
       </button>
       <button
-        className="login-form__buttons__register-button"
+        className={`login-form__buttons__register-button ${
+          currentThemeColor ? "dark" : ""
+        }`}
         onClick={switchForm}
       >
         i don't have an account, i wanna register

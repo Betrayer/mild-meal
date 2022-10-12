@@ -14,3 +14,5 @@ export const isAuth = (payload: boolean): AuthActions => ({
   type: IS_AUTH,
   payload,
 });
+
+

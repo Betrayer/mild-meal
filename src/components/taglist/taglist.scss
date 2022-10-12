@@ -23,6 +23,10 @@
     background-position: center;
     height: 60px;
     border-radius: 50px;
+
+    &.dark {
+      background-image: url(../../assets/images/searchbarBg_dark.png);
+    }
   }
 
   @media (min-width: 1024px) {

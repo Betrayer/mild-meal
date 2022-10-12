@@ -16,6 +16,9 @@
     align-items: flex-start;
     padding: 36px 52px 0;
     margin-top: 118px;
+    &.dark {
+      background-image: url(../../assets/images/tabletSectionsWrapperBg_dark.png);
+    }
   }
 
   @media (min-width: 1024px) {
@@ -24,5 +27,8 @@
     height: 510px;
     padding: 44px 78px 0;
     margin-top: 156px;
+    &.dark {
+      background-image: url(../../assets/images/laptopSectionsWrapperBg_dark.png);
+    }
   }
 }
