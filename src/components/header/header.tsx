@@ -1,5 +1,7 @@
 import React, { FC, useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { RootState } from "../../redux/rootReducer";
 import LoginButton from "../loginButton/loginButton";
 import MobileMenuSection from "../mobileMenuSection/mobileMenuSection";
 import Searchbar from "../searchbar/searchbar";
@@ -40,9 +42,13 @@ const Header: FC<HeaderProps> = ({ handleLoginButton }) => {
     navigate("/");
   };
 
+  const currentThemeColor = useSelector(
+    (state: RootState) => state.global.themeColor
+  );
+
   return (
-    <header className="header" onClick={logoRedirect}>
-      <div className="header_logo">
+    <header className={`header ${currentThemeColor}`}>
+      <div className="header_logo" onClick={logoRedirect}>
         <span className="header_logo-name">mildmeal</span>
         <span className="header_logo-tagline">your best kitchen assistant</span>
       </div>

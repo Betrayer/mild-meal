@@ -10,6 +10,14 @@
   box-sizing: border-box;
   padding: 20px 16px 10px;
 
+  &.dark {
+    background-image: url(../../assets/images/mobileRecipesSectionBg_dark.png);
+    
+    @media (min-width: 768px) {
+      background-image: none;
+    }
+  }
+
   @media (min-width: 768px) {
     padding: 0;
     background-image: none;

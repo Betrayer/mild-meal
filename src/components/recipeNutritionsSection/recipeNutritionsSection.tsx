@@ -1,13 +1,18 @@
 import React, { FC } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/rootReducer";
 import "./recipeNutritionsSection.scss";
 
 const RecipeNutritionsSection: FC = () => {
   const handleClick = () => {
     alert("clicked!");
   };
+  const currentThemeColor = useSelector(
+    (state: RootState) => state.global.themeColor
+  );
 
   return (
-    <section className="recipe-nutritions-section">
+    <section className={`recipe-nutritions-section ${currentThemeColor}`}>
       <div className="recipe-nutritions-section__content">
         <span className="recipe-nutritions-section__content__title"></span>
         <span className="recipe-nutritions-section__content__size"></span>

@@ -13,6 +13,10 @@
   margin: 18px 0;
   justify-content: space-between;
 
+  &.dark {
+    background-image: url(../../assets/images/mobileUserContent3Bg_dark.png);
+  }
+
   @media (min-width: 768px) {
     width: 432px;
     height: 142px;
@@ -26,6 +30,10 @@
     height: 510px;
     padding: 40px 42px 0;
     background-image: url(../../assets/images/laptopUserContentBg3.png);
+
+    &.dark {
+      background-image: url(../../assets/images/laptopUserContentBg3_dark.png);
+    }
   }
 
   &__text {
@@ -45,10 +53,18 @@
     height: 40px;
     cursor: pointer;
 
+    &.dark {
+      background-image: url(../../assets/images/mobileUserAddButton_dark.png);
+    }
+
     @media (min-width: 1024px) {
       background-image: url(../../assets/images/laptopUserAddButton.png);
       width: 78px;
       height: 78px;
+
+      &.dark {
+        background-image: url(../../assets/images/laptopUserAddButton_dark.png);
+      }
     }
 
     &-text {

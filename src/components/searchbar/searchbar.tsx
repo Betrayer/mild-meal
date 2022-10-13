@@ -1,4 +1,6 @@
 import React, { FC, useRef } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/rootReducer";
 import "./searchbar.scss";
 
 interface SearchbarProps {
@@ -16,8 +18,12 @@ const Searchbar: FC<SearchbarProps> = ({
 }) => {
   const inputValueRef = useRef(null);
 
+  const currentThemeColor = useSelector(
+    (state: RootState) => state.global.themeColor
+  );
+
   return (
-    <form className="searchbar" onSubmit={(e) => handleSearchSubmit(e)}>
+    <form className={`searchbar ${currentThemeColor}`} onSubmit={(e) => handleSearchSubmit(e)}>
       {window.innerWidth >= 768 ? (
         inputIsVisible && (
           <input

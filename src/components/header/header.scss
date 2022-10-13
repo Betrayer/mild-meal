@@ -14,10 +14,18 @@
   height: 60px;
   padding: 0 16px;
 
+  &.dark {
+    background-image: url(../../assets/images/headerMobileBg_dark.png);
+  }
+
   @media (min-width: 768px) {
     background-image: url(../../assets/images/headerTabletBg.png);
     height: 90px;
     padding: 0 20px;
+
+    &.dark {
+      background-image: url(../../assets/images/headerTabletBg_dark.png);
+    }
   }
 
   @media (min-width: 1024px) {
@@ -26,6 +34,10 @@
     height: 90px;
     margin-top: 44px;
     padding: 0 24px;
+
+    &.dark {
+      background-image: url(../../assets/images/headerLaptopBg_dark.png);
+    }
   }
 
   .openMenu {
@@ -34,28 +46,6 @@
 
   .closeMenu {
     background-image: url(../../assets/images/menuButtonClose.png);
-  }
-
-  .openedSearch {
-    @media (min-width: 768px) {
-      width: calc(100% - 440px);
-    }
-
-    @media (min-width: 1024px) {
-      width: 544px;
-    }
-  }
-
-  .openedCategories {
-    @media (min-width: 768px) {
-      width: calc(100% - 440px);
-      height: 62px;
-      background-color: rgba(233, 131, 76, 0.195);
-    }
-
-    @media (min-width: 1024px) {
-      width: 544px;
-    }
   }
 
   .hiddenElement {
@@ -157,7 +147,6 @@
 
     @media (min-width: 1024px) {
       width: 86px;
-      // margin-right: 24px;
     }
   }
 }

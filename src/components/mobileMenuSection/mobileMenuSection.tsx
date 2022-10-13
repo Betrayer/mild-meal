@@ -1,4 +1,6 @@
 import React, { FC, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/rootReducer";
 import LoginButton from "../loginButton/loginButton";
 import Searchbar from "../searchbar/searchbar";
 import TaglistWrapper from "../taglist/taglistWrapper/taglistWrapper";
@@ -27,9 +29,12 @@ const MobileMenuSection: FC<MobileMenuProps> = ({
   const handleMenuTagsButton = () => {
     setTagsAreOpened(!tagsAreOpened);
   };
+  const currentThemeColor = useSelector(
+    (state: RootState) => state.global.themeColor
+  );
 
   return (
-    <ul className="mobile-menu">
+    <ul className={`mobile-menu ${currentThemeColor}`}>
       <li className="mobile-menu-item">
         <Searchbar
           handleSearchSubmit={handleSearchSubmit}
@@ -46,7 +51,11 @@ const MobileMenuSection: FC<MobileMenuProps> = ({
           <label>{tagsAreOpened ? "▲" : "▼"}</label>search by categories
         </button>
       </li>
-      {tagsAreOpened && <li><TaglistWrapper /></li>}
+      {tagsAreOpened && (
+        <li>
+          <TaglistWrapper />
+        </li>
+      )}
       <li className="mobile-menu-item">
         <ThemeChangeButton />
       </li>

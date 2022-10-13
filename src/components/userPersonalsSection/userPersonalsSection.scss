@@ -9,6 +9,10 @@
   background-size: cover;
   margin-top: 30px;
 
+  &.dark {
+    background-image: url(../../assets/images/mobileUserPersonalsBg_dark.png);
+  }
+
   @media (min-width: 768px) {
     width: 180px;
     height: 300px;
@@ -49,6 +53,10 @@
         color: rgb(123, 123, 123);
         cursor: pointer;
 
+        &.dark {
+          color: rgb(102, 84, 56);
+        }
+
         @media (min-width: 768px) {
           font-size: 8px;
           line-height: 8px;
@@ -64,6 +72,10 @@
         display: flex;
         align-items: center;
         padding-left: 4px;
+
+        &.dark {
+          background-color: #e5ccad;
+        }
 
         @media (min-width: 768px) {
           height: 20px;

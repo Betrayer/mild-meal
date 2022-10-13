@@ -26,12 +26,20 @@ body {
   cursor: default;
   position: relative;
 
+  &.dark {
+    background-image: url(../../assets/images/mobileBodyBg_dark.png);
+  }
+
   @media (min-width: 768px) {
     background-image: url(../../assets/images/tabletBodyBg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 636px;
+
+    &.dark {
+      background-image: url(../../assets/images/tabletBodyBg_dark.png);
+    }
   }
 
   @media (min-width: 1024px) {
@@ -39,5 +47,9 @@ body {
     background-size: contain;
     height: 100vh;
     background-size: 100% 100%;
+
+    &.dark {
+      background-image: url(../../assets/images/laptopBodyBg_dark.png);
+    }
   }
 }

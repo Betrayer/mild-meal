@@ -1,10 +1,15 @@
 import React, { FC } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/rootReducer";
 import SocialsSection from "../socialsSection/socialsSection";
 import "./greetingSection.scss";
 
 const GreetingSection: FC = () => {
+  const currentThemeColor = useSelector(
+    (state: RootState) => state.global.themeColor
+  );
   return (
-    <section className="greeting-section">
+    <section className={`greeting-section ${currentThemeColor}`}>
       <div className="greeting-section__text">
         <p>
           Pellentesque ac iaculis nisl. Nulla a justo ac risus sagittis rutrum.
@@ -20,7 +25,7 @@ const GreetingSection: FC = () => {
           leo. Donec viverra libero at ante luctus eleifend. Fusce. fer.
         </p>
       </div>
-      <SocialsSection/>
+      <SocialsSection />
     </section>
   );
 };

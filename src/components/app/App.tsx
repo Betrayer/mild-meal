@@ -6,6 +6,8 @@ import Header from "../header/header";
 import LoginAndRegistrationSection from "../loginAndRegistrationSection/loginAndRegistrationSection";
 
 import "./index.scss";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/rootReducer";
 
 const App: FC = () => {
   const HomePage = React.lazy(() => import("../../pages/homepage/HomePage"));
@@ -31,8 +33,12 @@ const App: FC = () => {
     setShowLoginModal(!showLoginModal);
   };
 
+  const currentThemeColor = useSelector(
+    (state: RootState) => state.global.themeColor
+  );
+
   return (
-    <div className="appWrapper">
+    <div className={`appWrapper ${currentThemeColor}`}>
       <Header handleLoginButton={handleLoginButton} />
       {showLoginModal && (
         <LoginAndRegistrationSection handleLoginButton={handleLoginButton} />

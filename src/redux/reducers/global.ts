@@ -1,11 +1,17 @@
-import { GlobalActions, SET_LOADING_STATUS } from "./../actionTypes/global";
+import {
+  GlobalActions,
+  SET_LOADING_STATUS,
+  THEME_COLOR,
+} from "./../actionTypes/global";
 
 interface GlobalState {
   loading: boolean;
+  themeColor: string;
 }
 
 const initialState: GlobalState = {
   loading: false,
+  themeColor: "bright",
 };
 
 export const globalReducer = (
@@ -17,6 +23,12 @@ export const globalReducer = (
       return {
         ...state,
         loading: action.payload,
+      };
+
+    case THEME_COLOR:
+      return {
+        ...state,
+        themeColor: action.payload,
       };
     default:
       return state;
