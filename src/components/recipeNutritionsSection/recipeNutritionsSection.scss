@@ -2,7 +2,6 @@
   background-image: url(../../assets/images/mobileRecipeNutritionsSectionBg.png);
   width: 320px;
   height: 326px;
-  margin-top: 12px;
   box-sizing: border-box;
   padding: 8px 22px 0;
   display: flex;
@@ -13,7 +12,6 @@
     background-image: url(../../assets/images/tabletRecipeNutritionsSectionBg.png);
     height: 500px;
     width: 270px;
-    margin: 0;
     padding: 40px 26px 0 18px;
     flex-direction: row;
   }
@@ -43,7 +41,7 @@
 
     &__nutritions {
       background-color: rgba(212, 255, 20, 0.29);
-      height: 230px;
+      height: 220px;
       margin: 0;
 
       @media (min-width: 768px) {
@@ -53,11 +51,11 @@
   }
 
   &__button {
-    display: none;
     text-align: center;
     text-decoration: underline;
     cursor: pointer;
     user-select: none;
+    margin-top: 2px;
 
     @media (min-width: 768px) {
       position: absolute;
@@ -67,8 +65,19 @@
       top: 50%;
     }
 
-    @media (min-width: 1024px) {
-      display: none;
-    }
+    // @media (min-width: 1024px) {
+    //   display: none;
+    // }
+  }
+}
+
+.hidden-under {
+  position: absolute;
+  z-index: 1;
+  bottom: -10px;
+
+  @media (min-width: 768px) {
+    left: 48%;
+    top: 0;
   }
 }

@@ -13,6 +13,7 @@
   width: 100%;
   height: 60px;
   padding: 0 16px;
+  z-index: 3;
 
   @media (min-width: 768px) {
     background-image: url(../../assets/images/headerTabletBg.png);
