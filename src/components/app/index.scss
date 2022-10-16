@@ -17,7 +17,9 @@ body {
 .appWrapper {
   background-image: url(../../assets/images/mobileBodyBg.png);
   width: 100vw;
-  height: fit-content;
+  // height: fit-content;
+  min-height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -35,7 +37,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 636px;
+    // height: 636px;
 
     &.dark {
       background-image: url(../../assets/images/tabletBodyBg_dark.png);
@@ -44,8 +46,7 @@ body {
 
   @media (min-width: 1024px) {
     background-image: url(../../assets/images/laptopBodyBg.png);
-    background-size: contain;
-    height: 100vh;
+    // height: 100vh;
     background-size: 100% 100%;
 
     &.dark {
