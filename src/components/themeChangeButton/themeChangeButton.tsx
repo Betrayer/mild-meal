@@ -15,8 +15,6 @@ const ThemeChangeButton: FC = () => {
     (state: RootState) => state.global.themeColor
   );
 
-  console.log(currentThemeColor);
-
   return (
     <div
       className={`theme-change-button ${currentThemeColor}`}

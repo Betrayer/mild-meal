@@ -1,13 +1,13 @@
-import React, { FC, Suspense, useState } from "react";
+import React, { FC, Suspense, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../redux/rootReducer";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../configs/firebase.config";
+import { getRecipes } from "../../redux/actions/recipes";
 import Header from "../header/header";
 import LoginAndRegistrationSection from "../loginAndRegistrationSection/loginAndRegistrationSection";
-
 import "./index.scss";
-import { useSelector } from "react-redux";
-import { RootState } from "../../redux/rootReducer";
 
 const App: FC = () => {
   const HomePage = React.lazy(() => import("../../pages/homepage/HomePage"));
@@ -27,7 +27,10 @@ const App: FC = () => {
   //     console.log(doc.id, " => ", doc.data());
   //   });
   // };
+
   const [showLoginModal, setShowLoginModal] = useState(false);
+
+  const dispatch = useDispatch();
 
   const handleLoginButton = () => {
     setShowLoginModal(!showLoginModal);
@@ -36,6 +39,10 @@ const App: FC = () => {
   const currentThemeColor = useSelector(
     (state: RootState) => state.global.themeColor
   );
+
+  useEffect(() => {
+    // dispatch(getRecipes());
+  }, []);
 
   return (
     <div className={`appWrapper ${currentThemeColor}`}>

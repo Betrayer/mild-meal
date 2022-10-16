@@ -11,3 +11,8 @@ export type AuthData = {
 export type RegisterResponce = {
   accessToken: string;
 };
+
+export type Recipe = {
+  id: number;
+  image: string;
+};

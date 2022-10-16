@@ -1,8 +1,8 @@
 import { all, AllEffect } from "redux-saga/effects";
-import globalSagas from "./sagas/global";
+import recipesSagas from "./sagas/recipes";
 
 function* rootSaga(): Generator<AllEffect<Generator>, void> {
-  yield all([globalSagas()]);
+  yield all([recipesSagas()]);
 }
 
 export default rootSaga;
