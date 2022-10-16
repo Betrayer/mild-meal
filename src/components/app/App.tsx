@@ -1,10 +1,10 @@
 import React, { FC, Suspense, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/rootReducer";
-import { getRecipes } from "../../api";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../configs/firebase.config";
+import { getRecipes } from "../../redux/actions/recipes";
 import Header from "../header/header";
 import LoginAndRegistrationSection from "../loginAndRegistrationSection/loginAndRegistrationSection";
 import "./index.scss";
@@ -27,8 +27,10 @@ const App: FC = () => {
   //     console.log(doc.id, " => ", doc.data());
   //   });
   // };
-  
+
   const [showLoginModal, setShowLoginModal] = useState(false);
+
+  const dispatch = useDispatch();
 
   const handleLoginButton = () => {
     setShowLoginModal(!showLoginModal);
@@ -39,7 +41,7 @@ const App: FC = () => {
   );
 
   useEffect(() => {
-    // getRecipes();
+    // dispatch(getRecipes());
   }, []);
 
   return (

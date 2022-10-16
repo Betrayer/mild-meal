@@ -1,13 +1,22 @@
 import axios from "axios";
 
-const id = 4632;
-const apiKey = "b6b05a91090c429a8d997afa6012aad4";
+const apiKey = process.env.REACT_APP_API_KEY;
 
-export const getRecipes = async () => {
-  axios
-    .get(
-      `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=false`,
-      {}
-    )
-    .then((res) => console.log(res));
+const id = 4632;
+
+// export const getRecipes = async () => {
+//   const res = await axios.get(
+//     `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=false`,
+//     {}
+//   );
+//   return res.data;
+// };
+
+export const getRandomRecipes = async (): Promise<any> => {
+  console.log("request IAP");
+  const res = await axios.get(
+    `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=6`
+  );
+
+  return res.data.recipes;
 };
