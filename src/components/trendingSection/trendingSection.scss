@@ -40,6 +40,9 @@
   }
 
   &__content-block {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     width: 100%;
     height: fit-content;
@@ -49,10 +52,12 @@
 
     @media (min-width: 768px) {
       height: 384px;
+      justify-content: center;
     }
 
     @media (min-width: 1024px) {
       height: 388px;
+      justify-content: space-between;
     }
   }
 }

@@ -1,119 +1,129 @@
 .recipe-card {
   height: fit-content;
   width: 140px;
+  height: 130px;
   margin-bottom: 10px;
   cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: 768px) {
-    width: 226px;
+    width: 190px;
   }
 
-  &__upper-part {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+  @media (min-width: 1024px) {
+    width: 238px;
+    height: 196px;
+    justify-content: center;
+  }
+
+  &__picture {
     width: 100%;
-    height: 60px;
-    display: flex;
-    border: 0.1px solid;
+    height: 70%;
     box-sizing: border-box;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
     border-bottom: none;
 
     @media (min-width: 768px) {
-      height: 92px;
+      height: 80%;
     }
 
-    &__picture {
-      width: 60px;
-      height: 60px;
-      border-radius: 20px;
-      background-image: url(../../assets/images/foodPlaceholder.jpg);
-      background-size: 100%;
-      border-bottom: 0.1px solid;
-      box-sizing: border-box;
+    @media (min-width: 1024px) {
+      height: 76%;
+    }
+  }
 
-      @media (min-width: 768px) {
-        width: 90px;
-        height: 90px;
-        border-radius: 50px;
-      }
+  &__description {
+    width: 100%;
+    transition: 0.5s;
+    font-size: 10px;
+    line-height: 10px;
+    letter-spacing: -0.1em;
+    height: 30%;
+    box-sizing: border-box;
+    opacity: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    border-top: none;
+    background-color: rgba(228, 221, 208, 0.5);
+
+    @media (min-width: 768px) {
+      height: 20%;
     }
 
-    &__points-and-name {
-      width: 74px;
-      height: 60px;
-      border-radius: 20px;
-      box-sizing: border-box;
-      padding: 2px 0 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    @media (min-width: 1024px) {
+      font-size: 14px;
+      line-height: 14px;
+      height: 24%;
+    }
+  }
+
+  &__time,
+  &__gluten,
+  &__vegan {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 4px;
+
+    @media (min-width: 1024px) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &__time {
+    width: 50px;
+    height: 20px;
+    left: 4px;
+    display: flex;
+    font-size: 12px;
+    line-height: 12px;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      width: 64px;
+      height: 26px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 104px;
+      height: 40px;
+    }
+
+    &-num {
+      position: absolute;
+      left: 24px;
+      top: 8px;
+      font-size: 10px;
 
       @media (min-width: 768px) {
-        width: 136px;
-        height: 92px;
+        left: 32px;
+        top: 8px;
+        font-size: 15px;
       }
 
-      &__points {
-        width: 44px;
-        height: 10px;
-        background-image: url(../../assets/images/5points.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        margin-bottom: 2px;
-
-        @media (min-width: 768px) {
-          width: 84px;
-          height: 16px;
-        }
-      }
-
-      &__name {
-        text-align: center;
-        height: 42px;
-        width: 90%;
-        font-size: 10px;
-        line-height: 8.5px;
-        letter-spacing: -0.1em;
-
-        @media (min-width: 768px) {
-          font-size: 14px;
-          line-height: 14px;
-          width: 120px;
-          height: 64px;
-        }
+      @media (min-width: 1024px) {
+        left: 46px;
+        top: 12px;
+        font-size: 20px;
       }
     }
   }
 
-  &__lower-part {
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    width: 100%;
-    height: 30px;
-    box-sizing: border-box;
-    border: 0.1px solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 6px;
+  &__gluten {
+    right: 28px;
 
-    @media (min-width: 768px) {
-      height: 32px;
+    @media (min-width: 1024px) {
+      right: 32px;
     }
+  }
 
-    &__description {
-      text-align: center;
-      font-size: 10px;
-      line-height: 8.5px;
-      letter-spacing: -0.1em;
-
-      @media (min-width: 768px) {
-        font-size: 12px;
-        line-height: 12px;
-        width: 212px;
-        height: 24px;
-      }
-    }
+  &__vegan {
+    right: 4px;
   }
 }
