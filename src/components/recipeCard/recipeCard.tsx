@@ -19,7 +19,7 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
   };
 
   return (
-    <li className="recipe-card" onClick={recipeRedirect} key={recipe.id}>
+    <li className="recipe-card" onClick={recipeRedirect}>
       <img
         className="recipe-card__picture"
         src={recipe.image}
@@ -31,13 +31,13 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
       {recipe.glutenFree ? (
         <img className="recipe-card__gluten" src={gluten} alt="gluten" />
       ) : (
-        <img className="recipe-card__gluten" src={gluten_free} alt="gluten" />
+        <img className="recipe-card__gluten" src={gluten_free} alt="gluten-free" />
       )}
 
       {recipe.vegan ? (
-        <img className="recipe-card__vegan" src={vegan} alt={recipe.vegan} />
+        <img className="recipe-card__vegan" src={vegan} alt="vegan" />
       ) : (
-        <img className="recipe-card__vegan" src={non_vegan} alt="vegan" />
+        <img className="recipe-card__vegan" src={non_vegan} alt="non-vegan" />
       )}
       <span className="recipe-card__description">{recipe.title}</span>
     </li>
