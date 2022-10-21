@@ -6,6 +6,8 @@ import gluten_free from "../../assets/images/gluten-free.png";
 import vegan from "../../assets/images/vegan.png";
 import non_vegan from "../../assets/images/non-vegan.png";
 import cooking_time from "../../assets/images/cooking-time2.png";
+import { useDispatch } from "react-redux";
+import { getChosenRecipe } from "../../redux/actions/recipes";
 
 interface RecipeCardProps {
   recipe: any;
@@ -13,8 +15,10 @@ interface RecipeCardProps {
 
 const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const recipeRedirect = (): void => {
+    dispatch(getChosenRecipe(recipe.id))
     navigate("/recipe/#");
   };
 
