@@ -19,8 +19,6 @@ const RecipeDescriptionSection: FC = () => {
 
   const recipe = useSelector((state: RootState) => state.recipes.chosenRecipe);
 
-  console.log(recipe);
-
   return (
     <section className={`recipe-description-section ${currentThemeColor}`}>
       <div className="recipe-description-section__content">
@@ -39,37 +37,27 @@ const RecipeDescriptionSection: FC = () => {
                 <br />
                 min
               </span>
-
               {recipe.glutenFree ? (
-                <>
-                  <img
-                    className="recipe-card__gluten"
-                    src={gluten}
-                    alt="gluten"
-                  />
-                </>
+                <img
+                  className="recipe-card__gluten"
+                  src={gluten}
+                  alt="gluten"
+                />
               ) : (
-                <>
-                  <img
-                    className="recipe-card__gluten"
-                    src={gluten_free}
-                    alt="gluten-free"
-                  />
-                </>
+                <img
+                  className="recipe-card__gluten"
+                  src={gluten_free}
+                  alt="gluten-free"
+                />
               )}
-
               {recipe.vegan ? (
-                <>
-                  <img className="recipe-card__vegan" src={vegan} alt="vegan" />
-                </>
+                <img className="recipe-card__vegan" src={vegan} alt="vegan" />
               ) : (
-                <>
-                  <img
-                    className="recipe-card__vegan"
-                    src={non_vegan}
-                    alt="non-vegan"
-                  />
-                </>
+                <img
+                  className="recipe-card__vegan"
+                  src={non_vegan}
+                  alt="non-vegan"
+                />
               )}
             </div>
           </div>
@@ -86,7 +74,7 @@ const RecipeDescriptionSection: FC = () => {
                       : ingredient.amount}{" "}
                     {ingredient.measures.metric.unitShort}
                   </span>
-                  <div></div>
+                  <div />
                   <span>{ingredient.name}</span>
                 </div>
               </li>
