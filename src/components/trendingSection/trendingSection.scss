@@ -10,6 +10,14 @@
   box-sizing: border-box;
   padding: 20px 16px 10px;
 
+  &.dark {
+    background-image: url(../../assets/images/mobileRecipesSectionBg_dark.png);
+
+    @media (min-width: 768px) {
+      background-image: none;
+    }
+  }
+
   @media (min-width: 768px) {
     padding: 0;
     background-image: none;
@@ -21,17 +29,10 @@
     width: 486px;
   }
 
-  &__title {
-    margin-bottom: 8px;
-    letter-spacing: -0.1em;
-
-    @media (min-width: 768px) {
-      font-size: 20px;
-      line-height: 20px;
-    }
-  }
-
   &__content-block {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     width: 100%;
     height: fit-content;
@@ -41,10 +42,12 @@
 
     @media (min-width: 768px) {
       height: 384px;
+      justify-content: center;
     }
 
     @media (min-width: 1024px) {
       height: 388px;
+      justify-content: space-between;
     }
   }
 }

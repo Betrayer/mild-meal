@@ -17,6 +17,11 @@
   box-sizing: border-box;
   padding: 30px 12px 24px 0;
 
+  &.dark {
+    background-image: url(../../assets/images/mobileMenuSectionBg_dark.png);
+  }
+  
+
   &-item {
     width: fit-content;
     display: flex;

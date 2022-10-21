@@ -1,4 +1,6 @@
 import React, { FC, FormEvent, useRef } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/rootReducer";
 import { AuthData } from "../../types/types";
 
 import "./registrationForm.scss";
@@ -19,10 +21,15 @@ const RegistrationForm: FC<RegistrationProps> = ({
   authCredentials,
 }) => {
   const modalRef = useRef(null);
+
+  const currentThemeColor = useSelector(
+    (state: RootState) => state.global.themeColor
+  );
+
   return (
     <form
       ref={modalRef}
-      className="registration-form"
+      className={`registration-form ${currentThemeColor}`}
       onSubmit={(e) => handleRegistrationFormSubmit(e)}
     >
       <div
@@ -30,8 +37,14 @@ const RegistrationForm: FC<RegistrationProps> = ({
         onClick={handleLoginButton}
       />
       <span className="registration-form__title">registration form</span>
-      <input type="text" name="name" placeholder="name" />
       <input
+        className={`${currentThemeColor}`}
+        type="text"
+        name="name"
+        placeholder="name"
+      />
+      <input
+        className={`${currentThemeColor}`}
         required
         type="email"
         name="email"
@@ -39,9 +52,20 @@ const RegistrationForm: FC<RegistrationProps> = ({
         value={authCredentials.email}
         onChange={handleAuthInput}
       />
-      <input type="number" name="age" placeholder="age" />
-      <input type="text" name="city" placeholder="city" />
       <input
+        className={`${currentThemeColor}`}
+        type="number"
+        name="age"
+        placeholder="age"
+      />
+      <input
+        className={`${currentThemeColor}`}
+        type="text"
+        name="city"
+        placeholder="city"
+      />
+      <input
+        className={`${currentThemeColor}`}
         required
         minLength={5}
         type="password"
@@ -51,6 +75,7 @@ const RegistrationForm: FC<RegistrationProps> = ({
         onChange={handleAuthInput}
       />
       <input
+        className={`${currentThemeColor}`}
         required
         minLength={5}
         type="password"
@@ -64,13 +89,17 @@ const RegistrationForm: FC<RegistrationProps> = ({
         promise to be a good boy/girl/helicopter
       </label>
       <button
-        className="registration-form__buttons__register-button"
+        className={`registration-form__buttons__register-button ${
+          currentThemeColor ? "dark" : ""
+        }`}
         type="submit"
       >
         register
       </button>
       <button
-        className="registration-form__buttons__login-button"
+        className={`registration-form__buttons__login-button ${
+          currentThemeColor ? "dark" : ""
+        }`}
         onClick={switchForm}
       >
         i have an account, i wanna log in

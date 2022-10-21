@@ -22,9 +22,10 @@ body {
 
 .appWrapper {
   background-image: url(../../assets/images/mobileBodyBg.png);
-  display: flex;
+  width: 100vw;
   min-height: 100vh;
   height: 100%;
+  display: flex;
   justify-content: center;
   align-items: flex-start;
   background-repeat: repeat;
@@ -34,19 +35,27 @@ body {
   box-sizing: border-box;
   padding-bottom: 20px;
 
+  &.dark {
+    background-image: url(../../assets/images/mobileBodyBg_dark.png);
+  }
+
   @media (min-width: 768px) {
     background-image: url(../../assets/images/tabletBodyBg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 636px;
-    padding-bottom: 0;
+
+    &.dark {
+      background-image: url(../../assets/images/tabletBodyBg_dark.png);
+    }
   }
 
   @media (min-width: 1024px) {
     background-image: url(../../assets/images/laptopBodyBg.png);
-    background-size: contain;
-    height: 100vh;
     background-size: 100% 100%;
+
+    &.dark {
+      background-image: url(../../assets/images/laptopBodyBg_dark.png);
+    }
   }
 }

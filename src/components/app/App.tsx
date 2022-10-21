@@ -1,10 +1,12 @@
-import React, { FC, Suspense, useState } from "react";
+import React, { FC, Suspense, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../redux/rootReducer";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../configs/firebase.config";
+import { getRecipes } from "../../redux/actions/recipes";
 import Header from "../header/header";
 import LoginAndRegistrationSection from "../loginAndRegistrationSection/loginAndRegistrationSection";
-
 import "./index.scss";
 
 const App: FC = () => {
@@ -25,14 +27,25 @@ const App: FC = () => {
   //     console.log(doc.id, " => ", doc.data());
   //   });
   // };
+
   const [showLoginModal, setShowLoginModal] = useState(false);
+
+  const dispatch = useDispatch();
 
   const handleLoginButton = () => {
     setShowLoginModal(!showLoginModal);
   };
 
+  const currentThemeColor = useSelector(
+    (state: RootState) => state.global.themeColor
+  );
+
+  useEffect(() => {
+    // dispatch(getRecipes());
+  }, []);
+
   return (
-    <div className="appWrapper">
+    <div className={`appWrapper ${currentThemeColor}`}>
       <Header handleLoginButton={handleLoginButton} />
       {showLoginModal && (
         <LoginAndRegistrationSection handleLoginButton={handleLoginButton} />

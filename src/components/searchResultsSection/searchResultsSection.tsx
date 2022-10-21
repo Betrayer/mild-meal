@@ -8,7 +8,7 @@ const SearchResultsSection = () => {
     <section>
       <span className="search-results-section__title">Results for ""</span>
       <ul className="search-results-section__list">
-        {window.innerWidth < 768 && (
+        {/* {window.innerWidth < 768 && (
           <>
             <li>
               <RecipeCard />
@@ -112,7 +112,7 @@ const SearchResultsSection = () => {
               <NextPageButton />
             </li>
           </>
-        )}
+        )} */}
       </ul>
     </section>
   );

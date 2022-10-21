@@ -1,6 +1,8 @@
 import React, { FC } from "react";
 import TaglistWrapper from "./taglistWrapper/taglistWrapper";
 import "./taglist.scss";
+import { RootState } from "../../redux/rootReducer";
+import { useSelector } from "react-redux";
 
 interface TaglistProps {
   inputIsVisible: boolean;
@@ -11,8 +13,12 @@ const Taglist: FC<TaglistProps> = ({
   inputIsVisible,
   handleTagsOpeningButton,
 }) => {
+  const currentThemeColor = useSelector(
+    (state: RootState) => state.global.themeColor
+  );
+
   return (
-    <div className="taglist">
+    <div className={`taglist ${currentThemeColor}`}>
       {window.innerWidth >= 768 ? (
         inputIsVisible ? (
           <button

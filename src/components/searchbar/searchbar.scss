@@ -13,6 +13,10 @@
     height: 60px;
     border-radius: 50px;
 
+    &.dark {
+      background-image: url(../../assets/images/searchbarBg_dark.png);
+    }
+
     &::-webkit-input-placeholder {
       color: transparent;
     }
@@ -35,11 +39,11 @@
     display: flex;
 
     &:focus {
-      outline: 1px solid #a1a1a1;
+      outline: none;
+    }
 
-      @media (min-width: 768px) {
-        outline: none;
-      }
+    &::-webkit-input-placeholder {
+      color: black;
     }
 
     @media (min-width: 768px) {

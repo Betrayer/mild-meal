@@ -1,32 +1,50 @@
 import React, { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import "./recipeCard.scss";
+import gluten from "../../assets/images/gluten.png";
+import gluten_free from "../../assets/images/gluten-free.png";
+import vegan from "../../assets/images/vegan.png";
+import non_vegan from "../../assets/images/non-vegan.png";
+import cooking_time from "../../assets/images/cooking-time2.png";
+import { useDispatch } from "react-redux";
+import { getChosenRecipe } from "../../redux/actions/recipes";
 
-const RecipeCard: FC = () => {
+interface RecipeCardProps {
+  recipe: any;
+}
+
+const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const recipeRedirect = (): void => {
+    dispatch(getChosenRecipe(recipe.id))
     navigate("/recipe/#");
   };
 
   return (
-    <div className="recipe-card" onClick={recipeRedirect}>
-      <div className="recipe-card__upper-part">
-        <div className="recipe-card__upper-part__picture"></div>
-        <div className="recipe-card__upper-part__points-and-name">
-          <div className="recipe-card__upper-part__points-and-name__points"></div>
-          <span className="recipe-card__upper-part__points-and-name__name">
-            rice with richmond rice and rice water with rice butter
-          </span>
-        </div>
-      </div>
-      <div className="recipe-card__lower-part">
-        <span className="recipe-card__lower-part__description">
-          rice gently covered in rice coat made of crunchy rice andrice rice
-          rice
-        </span>
-      </div>
-    </div>
+    <li className="recipe-card" onClick={recipeRedirect}>
+      <img
+        className="recipe-card__picture"
+        src={recipe.image}
+        alt={recipe.title}
+      />
+      <img className="recipe-card__time" src={cooking_time} alt="time" />
+      <span className="recipe-card__time-num">{recipe.readyInMinutes}</span>
+
+      {recipe.glutenFree ? (
+        <img className="recipe-card__gluten" src={gluten} alt="gluten" />
+      ) : (
+        <img className="recipe-card__gluten" src={gluten_free} alt="gluten-free" />
+      )}
+
+      {recipe.vegan ? (
+        <img className="recipe-card__vegan" src={vegan} alt="vegan" />
+      ) : (
+        <img className="recipe-card__vegan" src={non_vegan} alt="non-vegan" />
+      )}
+      <span className="recipe-card__description">{recipe.title}</span>
+    </li>
   );
 };
 
