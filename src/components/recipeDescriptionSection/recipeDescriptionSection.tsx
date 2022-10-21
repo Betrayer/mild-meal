@@ -19,8 +19,6 @@ const RecipeDescriptionSection: FC = () => {
 
   const recipe = useSelector((state: RootState) => state.recipes.chosenRecipe);
 
-  const keyId = nanoid(10);
-
   console.log(recipe);
 
   return (
@@ -79,8 +77,8 @@ const RecipeDescriptionSection: FC = () => {
         <div className="recipe-description-section__content__info">
           <ul className="ingredients-list">
             <span className="ingredients-list-title">Ingredients:</span>
-            {recipe.extendedIngredients.map((ingredient: any, keyId: any) => (
-              <li className="ingredients-list-item" key={keyId}>
+            {recipe.extendedIngredients.map((ingredient: any) => (
+              <li className="ingredients-list-item" key={nanoid(10)}>
                 <div className="ingredients-list__content-wrapper">
                   <span>
                     {ingredient.amount.toString().length > 5
@@ -98,8 +96,8 @@ const RecipeDescriptionSection: FC = () => {
             <span>Description:</span>
             <ol className="recipe-description-section__content__info__details">
               {recipe.analyzedInstructions.map((step: any) =>
-                step.steps.map((step: any, keyId: any) => (
-                  <li key={keyId}>{step.step}</li>
+                step.steps.map((step: any) => (
+                  <li key={nanoid(10)}>{step.step}</li>
                 ))
               )}
             </ol>

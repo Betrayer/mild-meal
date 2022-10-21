@@ -14,8 +14,6 @@ const RecipeNutritionsSection: FC = () => {
 
   const recipe = useSelector((state: RootState) => state.recipes.chosenRecipe);
 
-  const keyId = nanoid(10);
-
   return (
     <section className={`recipe-nutritions-section ${currentThemeColor}`}>
       <div className="recipe-nutritions-section__content">
@@ -23,8 +21,8 @@ const RecipeNutritionsSection: FC = () => {
           Nutritions:
         </span>
         <ul className="recipe-nutritions-section__content__nutritions">
-          {recipe.nutrition.nutrients.map((item: any, keyId: any) => (
-            <li key={keyId}>
+          {recipe.nutrition.nutrients.map((item: any) => (
+            <li key={nanoid(10)}>
               <span>{item.name}</span>
               <div />
               <span>{item.amount}</span>
