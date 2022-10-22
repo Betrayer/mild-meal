@@ -6,7 +6,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../configs/firebase.config";
 import { getRecipes } from "../../redux/actions/recipes";
 import Header from "../header/header";
-import LoginAndRegistrationSection from "../loginAndRegistrationSection/loginAndRegistrationSection";
+import LoginAndRegistrationSection from "../sections/loginAndRegistrationSection/loginAndRegistrationSection";
 import "./index.scss";
 
 const App: FC = () => {
