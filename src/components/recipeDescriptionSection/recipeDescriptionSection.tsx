@@ -10,9 +10,6 @@ import time from "../../assets/images/cooking-time.png";
 import { nanoid } from "nanoid";
 
 const RecipeDescriptionSection: FC = () => {
-  const handleClick = () => {
-    alert("clicked!");
-  };
   const currentThemeColor = useSelector(
     (state: RootState) => state.global.themeColor
   );
@@ -91,12 +88,6 @@ const RecipeDescriptionSection: FC = () => {
             </ol>
           </div>
         </div>
-        <span
-          className="recipe-description-section__content__button"
-          onClick={handleClick}
-        >
-          SHOW NUTRITION FACTS
-        </span>
       </div>
     </section>
   );

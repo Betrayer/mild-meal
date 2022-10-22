@@ -1,12 +1,16 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/rootReducer";
 import "./recipeNutritionsSection.scss";
 import { nanoid } from "nanoid";
 
 const RecipeNutritionsSection: FC = () => {
-  const handleClick = () => {
-    alert("clicked!");
+  const [nutritionsPosition, setNnutritionsPosition] = useState("hidden-under");
+  const [buttonKeyword, setButtonKeyword] = useState("show")
+
+  const handleNutritionsButton = () => {
+    setNnutritionsPosition(nutritionsPosition ? "" : "hidden-under");
+    setButtonKeyword(buttonKeyword === "show" ? "hide" : "show")
   };
   const currentThemeColor = useSelector(
     (state: RootState) => state.global.themeColor
@@ -15,7 +19,7 @@ const RecipeNutritionsSection: FC = () => {
   const recipe = useSelector((state: RootState) => state.recipes.chosenRecipe);
 
   return (
-    <section className={`recipe-nutritions-section ${currentThemeColor}`}>
+    <section className={`recipe-nutritions-section ${nutritionsPosition} ${currentThemeColor}`}>
       <div className="recipe-nutritions-section__content">
         <span className="recipe-nutritions-section__content__title">
           Nutritions:
@@ -31,8 +35,11 @@ const RecipeNutritionsSection: FC = () => {
           ))}
         </ul>
       </div>
-      <span className="recipe-nutritions-section__button" onClick={handleClick}>
-        SHOW NUTRITION FACTS
+      <span
+        className="recipe-nutritions-section__button"
+        onClick={handleNutritionsButton}
+      >
+        {buttonKeyword} NUTRITION FACTS
       </span>
     </section>
   );
