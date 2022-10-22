@@ -17,3 +17,16 @@ export const getRandomRecipes = async (): Promise<any> => {
 
   return res.data.recipes;
 };
+
+
+const ingredients = "cucumber"
+// export const searchByIngredient = async (ingredients: string) => {
+const searchByIngredient = async () => {
+  const res = await axios.get(
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${ingredients}&number=2`
+  );
+  // return res.data;
+  console.log(res.data);
+};
+
+searchByIngredient();
