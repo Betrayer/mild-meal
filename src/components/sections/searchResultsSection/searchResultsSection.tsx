@@ -1,5 +1,5 @@
 import React from "react";
-import NextPageButton from "../../nextPageButton/nextPageButton";
+import NextPageButton from "../../buttons/nextPageButton/nextPageButton";
 import RecipeCard from "../../recipeCard/recipeCard";
 import "./searchResultsSection.scss";
 
