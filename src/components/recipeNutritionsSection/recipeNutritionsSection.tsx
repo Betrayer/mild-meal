@@ -6,12 +6,11 @@ import { nanoid } from "nanoid";
 
 const RecipeNutritionsSection: FC = () => {
   const [nutritionsPosition, setNnutritionsPosition] = useState("hidden-under");
-  const [butonKeyword, setButtonKeyword] = useState("show")
+  const [buttonKeyword, setButtonKeyword] = useState("show")
 
   const handleNutritionsButton = () => {
     setNnutritionsPosition(nutritionsPosition ? "" : "hidden-under");
-    setButtonKeyword(butonKeyword === "show" ? "hide" : "show")
-    console.log(butonKeyword)
+    setButtonKeyword(buttonKeyword === "show" ? "hide" : "show")
   };
   const currentThemeColor = useSelector(
     (state: RootState) => state.global.themeColor
@@ -40,7 +39,7 @@ const RecipeNutritionsSection: FC = () => {
         className="recipe-nutritions-section__button"
         onClick={handleNutritionsButton}
       >
-        {butonKeyword} NUTRITION FACTS
+        {buttonKeyword} NUTRITION FACTS
       </span>
     </section>
   );
