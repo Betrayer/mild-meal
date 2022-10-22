@@ -1,0 +1,86 @@
+@keyframes glow {
+  0% {
+    left: -300px;
+  }
+
+  100% {
+    left: 400px;
+  }
+}
+
+@keyframes hover {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  100% {
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0);
+  }
+}
+
+.next-page-button {
+  position: relative;
+  background-color: #d8f4bd;
+  width: 288px;
+  height: 90px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid rgb(30, 96, 51);
+  overflow: hidden;
+  transition: 0.5s;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 14%;
+    height: 100%;
+    top: 0;
+    transform: skewX(-20deg);
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(249, 243, 171) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    animation: glow 6s infinite;
+  }
+
+  @media (min-width: 768px) {
+    height: 124px;
+    width: 226px;
+    padding-bottom: 12px;
+  }
+
+  &:hover {
+    animation: hover 2s;
+    scale: 104%;
+  }
+
+  &:active {
+    background-color: #aee07c;
+  }
+
+  &__upper-part {
+    background-image: url(../../../assets/images/nextPageButtonAvocado.png);
+    height: 50px;
+    width: 92px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    @media (min-width: 768px) {
+      height: 80px;
+      width: 144px;
+    }
+  }
+
+  &__lower-part {
+    border-top: 1px solid;
+    width: 100%;
+    user-select: none;
+  }
+}

@@ -1,0 +1,306 @@
+.hidden {
+  display: none;
+}
+
+.recipe-description-section {
+  background-image: url(../../../assets/images/mobileRecipeDescriptionSectionBg.png);
+  background-size: 100% 100%;
+  width: 320px;
+  box-sizing: border-box;
+  padding: 24px 12px 16px;
+  background-repeat: no-repeat;
+  z-index: 2;
+  height: fit-content;
+
+  &.dark {
+    background-image: url(../../../assets/images/mobileRecipeDescriptionSectionBg_dark.png);
+  }
+
+  @media (min-width: 768px) {
+    background-image: url(../../../assets/images/tabletRecipeDescriptionSectionBg.png);
+    height: 500px;
+    width: 440px;
+    padding: 24px 10px 0;
+
+    &.dark {
+      background-image: url(../../../assets/images/tabletRecipeDescriptionSectionBg_dark.png);
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 14px 10px 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    &__cutaway {
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      box-sizing: border-box;
+      flex-direction: column;
+      padding-bottom: 4px;
+      text-align: center;
+
+      & .description {
+        transition: 0.5s;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: -0.1em;
+        height: fit-content;
+        box-sizing: border-box;
+        padding-bottom: 2px;
+
+        @media (min-width: 768px) {
+          height: 42px;
+          font-size: 20px;
+          line-height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      & .wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 290px;
+        justify-content: space-between;
+        padding: 2px;
+        box-sizing: border-box;
+        border-top: 0.5px solid black;
+        border-bottom: 0.5px solid black;
+
+        @media (min-width: 768px) {
+          width: 100%;
+          padding-right: 10px;
+          justify-content: space-around;
+        }
+
+        & .details-wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          text-align: center;
+
+          @media (min-width: 768px) {
+            flex-wrap: wrap;
+            align-items: flex-start;
+          }
+        }
+      }
+
+      & .recipe-card {
+        &__picture {
+          width: 250px;
+          height: 154px;
+
+          @media (min-width: 768px) {
+            width: 330px;
+            height: 210px;
+          }
+
+          @media (min-width: 1024px) {
+            height: 76%;
+          }
+        }
+
+        &__gluten,
+        &__vegan {
+          width: 30px;
+          height: 30px;
+
+          @media (min-width: 768px) {
+            width: 46px;
+            height: 46px;
+          }
+
+          @media (min-width: 1024px) {
+            width: 54px;
+            height: 54px;
+          }
+        }
+
+        &__time {
+          display: flex;
+          font-size: 12px;
+          line-height: 12px;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          margin-bottom: 38px;
+          letter-spacing: -0.07em;
+
+          @media (min-width: 768px) {
+            padding-right: 6px;
+            font-size: 20px;
+            line-height: 20px;
+            height: 100%;
+            width: 50px;
+            margin-bottom: 22px;
+          }
+
+          @media (min-width: 1024px) {
+            margin-bottom: 14px;
+            padding-right: 0;
+            padding-left: 2px;
+          }
+
+          &-num {
+            font-size: 10px;
+
+            @media (min-width: 768px) {
+              font-size: 15px;
+            }
+
+            @media (min-width: 1024px) {
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+      & .list-wrapper {
+        & span {
+          margin-top: 6px;
+          line-height: 12px;
+          display: block;
+          text-align: center;
+          text-decoration: underline;
+          margin-bottom: 2px;
+
+          @media (min-width: 768px) {
+            margin-top: 0;
+          }
+        }
+      }
+
+      & .ingredients-list {
+        font-size: 14px;
+        line-height: 14px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        box-sizing: border-box;
+        padding: 0 10px 4px;
+        border-bottom: 1px solid black;
+
+        @media (min-width: 768px) {
+          width: 194px;
+          font-size: 12px;
+          line-height: 12px;
+          letter-spacing: -0.09em;
+          border-bottom: none;
+          padding: 0 2px 0 0;
+          border-right: 1px solid black;
+        }
+
+        &-title {
+          width: 100%;
+          text-align: center;
+          display: block;
+          text-decoration: underline;
+          margin-bottom: 4px;
+        }
+
+        &-item {
+          text-align: end;
+          font-size: 12px;
+          line-height: 12px;
+          padding-bottom: 2px;
+        }
+
+        &__content-wrapper {
+          display: flex;
+          justify-content: space-between;
+
+          & span {
+            white-space: nowrap;
+          }
+
+          & div {
+            width: 100%;
+            height: 7.5px;
+            border-bottom: 1px dashed black;
+            padding-bottom: 2px;
+          }
+        }
+      }
+
+      &__details {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 4px 20px;
+        height: fit-content;
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: -0.1em;
+        border-bottom: 1px solid black;
+
+        @media (min-width: 768px) {
+          width: 220px;
+          padding-right: 8px;
+          padding-left: 10px;
+          height: 196px;
+          border-bottom: none;
+          display: flex;
+          flex-direction: column;
+          overflow: scroll;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          @media (min-width: 1024px) {
+            height: 182px;
+          }
+        }
+
+        & span {
+          margin-top: 4px;
+          font-size: 16px;
+          display: block;
+          text-align: center;
+          text-decoration: underline;
+
+          @media (min-width: 768px) {
+            margin-top: 0;
+          }
+        }
+
+        & li {
+          margin-top: 4px;
+        }
+      }
+    }
+
+    &__button {
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      text-decoration: underline;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import RecipeDescriptionSection from "../../components/recipeDescriptionSection/recipeDescriptionSection";
-import RecipeNutritionsSection from "../../components/recipeNutritionsSection/recipeNutritionsSection";
+import RecipeDescriptionSection from "../../components/sections/recipeDescriptionSection/recipeDescriptionSection";
+import RecipeNutritionsSection from "../../components/sections/recipeNutritionsSection/recipeNutritionsSection";
 
 import "./recipePage.scss";
 
