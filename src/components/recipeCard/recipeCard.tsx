@@ -18,7 +18,7 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
   const dispatch = useDispatch();
 
   const recipeRedirect = (): void => {
-    dispatch(getChosenRecipe(recipe.id))
+    dispatch(getChosenRecipe(recipe.id));
     navigate("/recipe/#");
   };
  
@@ -31,18 +31,16 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
       />
       <img className="recipe-card__time" src={cooking_time} alt="time" />
       <span className="recipe-card__time-num">{recipe.readyInMinutes}</span>
-
-      {recipe.glutenFree ? (
-        <img className="recipe-card__gluten" src={gluten} alt="gluten" />
-      ) : (
-        <img className="recipe-card__gluten" src={gluten_free} alt="gluten-free" />
-      )}
-
-      {recipe.vegan ? (
-        <img className="recipe-card__vegan" src={vegan} alt="vegan" />
-      ) : (
-        <img className="recipe-card__vegan" src={non_vegan} alt="non-vegan" />
-      )}
+      <img
+        className="recipe-card__gluten"
+        src={recipe.glutenFree ? gluten : gluten_free}
+        alt="gluten"
+      />
+      <img
+        className="recipe-card__vegan"
+        src={recipe.vegan ? vegan : non_vegan}
+        alt="vegan"
+      />
       <span className="recipe-card__description">{recipe.title}</span>
     </li>
   );

@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getRecipesByKeywords } from "../../redux/actions/recipes";
 import { RootState } from "../../redux/rootReducer";
-import LoginButton from "../loginButton/loginButton";
-import MobileMenuSection from "../mobileMenuSection/mobileMenuSection";
+import LoginButton from "../buttons/loginButton/loginButton";
+import MobileMenuSection from "../sections/mobileMenuSection/mobileMenuSection";
 import Searchbar from "../searchbar/searchbar";
 import Taglist from "../taglist/taglist";
 import "./header.scss";
@@ -65,7 +65,7 @@ const Header: FC<HeaderProps> = ({ handleLoginButton }) => {
           menuIsVisible ? "closeMenu" : "openMenu"
         }`}
         onClick={handleMenuClick}
-      ></div>
+      />
 
       {window.innerWidth >= 768 && (
         <Taglist
@@ -88,7 +88,6 @@ const Header: FC<HeaderProps> = ({ handleLoginButton }) => {
 
       {menuIsVisible && (
         <MobileMenuSection
-          handleTagsOpeningButton={handleTagsOpeningButton}
           handleSearchSubmit={handleSearchSubmit}
           handleSearchButton={handleSearchButton}
           inputIsVisible={inputIsVisible}

@@ -1,0 +1,75 @@
+.user-favorite-section {
+  width: 320px;
+  height: 142px;
+  background-image: url(../../../assets/images/mobileUserContent2Bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  padding: 28px 22px 0;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin-top: 18px;
+
+  &.dark {
+    background-image: url(../../../assets/images/mobileUserContent2Bg_dark.png);
+  }
+
+  @media (min-width: 768px) {
+    width: 432px;
+    height: 142px;
+    padding: 12px 18px 0;
+    margin-top: 0;
+  }
+
+  @media (min-width: 1024px) {
+    width: 240px;
+    height: 510px;
+    padding: 40px 42px 0;
+    background-image: url(../../../assets/images/laptopUserContentBg2.png);
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    &.dark {
+      background-image: url(../../../assets/images/laptopUserContentBg2_dark.png);
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: -0.1em;
+    width: 208px;
+    margin: 0;
+
+    @media (min-width: 768px) {
+      font-size: 16px;
+      width: 180px;
+    }
+
+    @media (min-width: 1024px) {
+      width: fit-content;
+    }
+  }
+  &__img {
+    margin-top: 4px;
+    width: 58px;
+    height: 80px;
+    background-image: url(../../../assets/images/sadAvocado.png);
+    background-size: 100% 100%;
+
+    @media (min-width: 768px) {
+      margin-top:10px;
+      margin-right: 68px;
+      width: 70px;
+      height: 100px;
+    }
+
+    @media (min-width: 1024px) {
+      margin: 152px 0 0;
+      width: 90px;
+      height: 126px;
+    }
+  }
+}

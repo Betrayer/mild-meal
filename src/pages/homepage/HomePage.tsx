@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { useSelector } from "react-redux";
-import GreetingSection from "../../components/greetingSection/greeetingSection";
-import TrendingSection from "../../components/trendingSection/trendingSection";
+import GreetingSection from "../../components/sections/greetingSection/greeetingSection";
+import TrendingSection from "../../components/sections/trendingSection/trendingSection";
 import { RootState } from "../../redux/rootReducer";
 
 import "./homePage.scss";

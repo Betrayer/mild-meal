@@ -1,0 +1,67 @@
+.socials {
+  align-self: flex-end;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 148px;
+  height: 24px;
+  margin: 20px 12px 0 0;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    margin: 6px 0 0;
+  }
+
+  @media (min-width: 1024px) {
+    margin: 28px 0 0;
+  }
+
+  li {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &:hover {
+      scale: 120%;
+    }
+
+    &:active {
+      scale: 90%;
+    }
+  }
+
+  &__facebook {
+    background-image: url(../../../assets/images/facebookIcon.png);
+
+    &:hover {
+      background-image: url(../../../assets/images/facebookIconHover.png);
+    }
+  }
+
+  &__instagram {
+    background-image: url(../../../assets/images/instagramIcon.png);
+
+    &:hover {
+      background-image: url(../../../assets/images/instagramIconHover.png);
+    }
+  }
+
+  &__youtube {
+    background-image: url(../../../assets/images/youtubeIcon.png);
+
+    &:hover {
+      background-image: url(../../../assets/images/youtubeIconHover.png);
+    }
+  }
+
+  &__twitter {
+    background-image: url(../../../assets/images/twitterIcon.png);
+
+    &:hover {
+      background-image: url(../../../assets/images/twitterIconHover.png);
+    }
+  }
+}
