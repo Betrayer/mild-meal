@@ -18,7 +18,7 @@ interface MobileMenuProps {
 }
 
 const MobileMenuSection: FC<MobileMenuProps> = ({
-  handleTagsOpeningButton,
+  // handleTagsOpeningButton,
   handleSearchSubmit,
   handleSearchButton,
   inputIsVisible,

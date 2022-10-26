@@ -3,6 +3,8 @@ import {
   GET_RECIPES_RESPONCE,
   GET_CHOSEN_RECIPE,
   GET_CHOSEN_RECIPE_RESPONCE,
+  GET_RECIPES_BY_KEYWORDS,
+  GET_RECIPES_BY_KEYWORDS_RESPONSE,
   RecipesActions,
 } from "../actionTypes/recipes";
 import { Recipe } from "../../types/types";
@@ -23,5 +25,15 @@ export const getChosenRecipe = (payload: number): RecipesActions => ({
 
 export const getChosenRecipeResponse = (payload: any): RecipesActions => ({
   type: GET_CHOSEN_RECIPE_RESPONCE,
+  payload,
+});
+
+export const getRecipesByKeywords = (payload: string): RecipesActions => ({
+  type: GET_RECIPES_BY_KEYWORDS,
+  payload,
+});
+
+export const getRecipesByKeywordsResponse = (payload: any): RecipesActions => ({
+  type: GET_RECIPES_BY_KEYWORDS_RESPONSE,
   payload,
 });

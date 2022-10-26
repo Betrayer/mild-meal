@@ -1,14 +1,17 @@
 import { put, all, takeLatest, AllEffect, call } from "redux-saga/effects";
-import { getRandomRecipes, getRecipe } from "../../api";
+import { getRandomRecipes, getRecipe, searchByKeywords } from "../../api";
 import { setLoadingStatus } from "../actions/global";
 import {
   getChosenRecipeResponse,
   getRecipesResponse,
+  getRecipesByKeywordsResponse,
 } from "../actions/recipes";
 import {
   GetChosenRecipeAction,
-  GET_CHOSEN_RECIPE,
+  GetRecipeByKeywordAction,
   GET_RECIPES,
+  GET_CHOSEN_RECIPE,
+  GET_RECIPES_BY_KEYWORDS,
 } from "../actionTypes/recipes";
 
 function* randomRecipes() {
@@ -45,6 +48,25 @@ function* watchChosenRecipe() {
   yield takeLatest(GET_CHOSEN_RECIPE, chosenRecipe);
 }
 
+function* searchResults(action: GetRecipeByKeywordAction) {
+  try {
+    // yield put(setLoadingStatus(true));
+    const data: {} | [] = yield call(searchByKeywords, action.payload);
+    console.log(data);
+    yield put(getRecipesByKeywordsResponse(data));
+  } catch (error) {
+    console.log(error);
+  } finally {
+    // yield put(setLoadingStatus(false));
+  }
+}
+
+function* watchSearchResults() {
+  yield takeLatest(GET_RECIPES_BY_KEYWORDS, searchResults);
+}
+
+
+
 export default function* recipesSagas(): Generator<AllEffect<Generator>, void> {
-  yield all([watchRandomRecipes(), watchChosenRecipe()]);
+  yield all([watchRandomRecipes(), watchChosenRecipe(), watchSearchResults()]);
 }

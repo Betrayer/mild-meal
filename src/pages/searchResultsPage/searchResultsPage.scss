@@ -15,7 +15,7 @@
     background-image: url(../../assets/images/tabletSearchResultsSectionBg.png);
     width: 660px;
     height: 490px;
-    padding: 16px 82px 0;
+    padding: 16px 30px 0;
     margin-top: 118px;
 
     &.dark {
@@ -27,8 +27,8 @@
   @media (min-width: 1024px) {
     background-image: url(../../assets/images/laptopSearchResultsSectionBg.png);
     width: 1024px;
-    height: 510px;
-    padding: 34px 24px 0;
+    height: fit-content;
+    padding: 34px 24px;
     margin-top: 156px;
 
     &.dark {

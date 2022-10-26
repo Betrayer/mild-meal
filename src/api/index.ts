@@ -19,14 +19,13 @@ export const getRandomRecipes = async (): Promise<any> => {
 };
 
 
-const ingredients = "cucumber"
-// export const searchByIngredient = async (ingredients: string) => {
-const searchByIngredient = async () => {
+export const searchByKeywords = async (keywords: string) => {
+// const searchByIngredient = async (keywords: string) => {
   const res = await axios.get(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${ingredients}&number=2`
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${keywords}&number=20&addRecipeInformation=true`
   );
-  // return res.data;
-  console.log(res.data);
+  return res.data.results;
+  // console.log(res.data);
 };
 
-searchByIngredient();
+// searchByIngredient("chicken");

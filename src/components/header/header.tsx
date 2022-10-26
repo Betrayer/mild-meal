@@ -1,6 +1,8 @@
 import React, { FC, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { getRecipesByKeywords } from "../../redux/actions/recipes";
 import { RootState } from "../../redux/rootReducer";
 import LoginButton from "../loginButton/loginButton";
 import MobileMenuSection from "../mobileMenuSection/mobileMenuSection";
@@ -18,19 +20,24 @@ const Header: FC<HeaderProps> = ({ handleLoginButton }) => {
   const [inputValue, setInputValue] = useState("");
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleMenuClick = (): void => {
     setMenuIsVisible(!menuIsVisible);
   };
 
+  
   const handleSearchSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
-    alert(inputValue);
+    // dispatch(getRecipesByKeywords(inputValue)) 
+    setInputValue('');
+    navigate("/results");
+    // console.log("блядь")
   };
-
+  
   const handleSearchButton = (e: React.FormEvent): void => {
     e.preventDefault();
-    inputIsVisible ? alert(inputValue) : setInputIsVisible(true);
+    inputIsVisible ? handleSearchSubmit(e) : setInputIsVisible(true);
   };
 
   const handleTagsOpeningButton = (e: React.FormEvent): void => {
