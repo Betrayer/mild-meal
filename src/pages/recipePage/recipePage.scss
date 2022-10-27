@@ -8,6 +8,7 @@
   margin-top: 60px;
   position: relative;
   padding-bottom: 20px;
+  z-index: 1;
 
   @media (min-width: 768px) {
     flex-direction: row;

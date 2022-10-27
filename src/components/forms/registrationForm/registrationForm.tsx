@@ -89,17 +89,13 @@ const RegistrationForm: FC<RegistrationProps> = ({
         promise to be a good boy/girl/helicopter
       </label>
       <button
-        className={`registration-form__buttons__register-button ${
-          currentThemeColor ? "dark" : ""
-        }`}
+        className={`registration-form__buttons__register-button ${currentThemeColor}`}
         type="submit"
       >
         register
       </button>
       <button
-        className={`registration-form__buttons__login-button ${
-          currentThemeColor ? "dark" : ""
-        }`}
+        className={`registration-form__buttons__login-button ${currentThemeColor}`}
         onClick={switchForm}
       >
         i have an account, i wanna log in
