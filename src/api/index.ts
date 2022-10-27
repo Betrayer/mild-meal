@@ -18,14 +18,16 @@ export const getRandomRecipes = async (): Promise<any> => {
   return res.data.recipes;
 };
 
-
 export const searchByKeywords = async (keywords: string) => {
-// const searchByIngredient = async (keywords: string) => {
   const res = await axios.get(
     `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${keywords}&number=20&addRecipeInformation=true`
   );
   return res.data.results;
-  // console.log(res.data);
 };
 
-// searchByIngredient("chicken");
+export const searchByTag = async (tag: string) => {
+  const res = await axios.get(
+    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&type=${tag}&number=20&addRecipeInformation=true`
+  );
+  return res.data.results;
+};

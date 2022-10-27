@@ -5,6 +5,8 @@ import {
   GET_CHOSEN_RECIPE_RESPONCE,
   GET_RECIPES_BY_KEYWORDS,
   GET_RECIPES_BY_KEYWORDS_RESPONSE,
+  GET_RECIPES_BY_TAG,
+  GET_RECIPES_BY_TAG_RESPONSE,
   RecipesActions,
 } from "../actionTypes/recipes";
 import { Recipe } from "../../types/types";
@@ -35,5 +37,15 @@ export const getRecipesByKeywords = (payload: string): RecipesActions => ({
 
 export const getRecipesByKeywordsResponse = (payload: any): RecipesActions => ({
   type: GET_RECIPES_BY_KEYWORDS_RESPONSE,
+  payload,
+});
+
+export const getRecipesByTag = (payload: string): RecipesActions => ({
+  type: GET_RECIPES_BY_TAG,
+  payload,
+});
+
+export const getRecipesByTagsResponse = (payload: any): RecipesActions => ({
+  type: GET_RECIPES_BY_TAG_RESPONSE,
   payload,
 });

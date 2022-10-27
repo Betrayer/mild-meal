@@ -2,6 +2,7 @@ import {
   GET_CHOSEN_RECIPE_RESPONCE,
   GET_RECIPES_RESPONCE,
   GET_RECIPES_BY_KEYWORDS_RESPONSE,
+  GET_RECIPES_BY_TAG_RESPONSE,
   RecipesActions,
 } from "../actionTypes/recipes";
 import { Recipe } from "../../types/types";
@@ -10,12 +11,14 @@ interface RecipesState {
   randomRecipes: any;
   chosenRecipe: any;
   searchResults: any;
+  tagSearchResults: any;
 }
 
 const initialState: RecipesState = {
   randomRecipes: [],
   chosenRecipe: {},
-  searchResults: []
+  searchResults: [],
+  tagSearchResults: [],
 };
 
 export const recipesReducer = (
@@ -33,10 +36,15 @@ export const recipesReducer = (
         ...state,
         chosenRecipe: action.payload,
       };
-      case GET_RECIPES_BY_KEYWORDS_RESPONSE: 
+    case GET_RECIPES_BY_KEYWORDS_RESPONSE:
       return {
-        ...state, 
+        ...state,
         searchResults: action.payload,
+      };
+    case GET_RECIPES_BY_TAG_RESPONSE:
+      return {
+        ...state,
+        tagSearchResults: action.payload,
       };
     default:
       return state;
