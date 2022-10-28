@@ -4,7 +4,6 @@ import { RootState } from "../../../redux/rootReducer";
 import NextPageButton from "../../../components/buttons/nextPageButton/nextPageButton";
 import RecipeCard from "../../recipeCard/recipeCard";
 import "./searchResultsSection.scss";
-import { useNavigate } from "react-router-dom";
 
 const SearchResultsSection = () => {
   const [searchPageContent, setSearchPageContent] = useState([]);
@@ -17,15 +16,17 @@ const SearchResultsSection = () => {
     (state: RootState) => state.recipes.tagSearchResults
   );
 
-  const [sliceMainValue, setSliceMainValue] = useState(0);
-
-  const [sliceSecondValue, setSliceSecondValue] = useState(
+  const sliceHelper =
     window.innerWidth >= 768 && window.innerWidth < 1024
       ? 8
       : window.innerWidth >= 1024
       ? 11
-      : 12
-  );
+      : 12;
+
+  const [sliceParams, setSliceParams] = useState({
+    from: 0,
+    to: sliceHelper,
+  });
 
   useEffect(() => {
     setSearchPageContent(tagSearchResults);
@@ -39,28 +40,15 @@ const SearchResultsSection = () => {
     <section>
       <span className="search-results-section__title">Results</span>
       <ul className="search-results-section__list">
-        {window.innerWidth >= 768 && window.innerWidth < 1024
-          ? searchPageContent
-              .slice(sliceMainValue, sliceSecondValue)
-              .map((recipe: any, index: number) => (
-                <RecipeCard recipe={recipe} key={index} />
-              ))
-          : window.innerWidth >= 1024
-          ? searchPageContent
-              .slice(sliceMainValue, sliceSecondValue)
-              .map((recipe: any, index: number) => (
-                <RecipeCard recipe={recipe} key={index} />
-              ))
-          : searchPageContent
-              .slice(sliceMainValue, sliceSecondValue)
-              .map((recipe: any, index: number) => (
-                <RecipeCard recipe={recipe} key={index} />
-              ))}
+        {searchPageContent
+          .slice(sliceParams.from, sliceParams.to)
+          .map((recipe: any, index: number) => (
+            <RecipeCard recipe={recipe} key={index} />
+          ))}
         <NextPageButton
-          sliceMainValue={sliceMainValue}
-          setSliceMainValue={setSliceMainValue}
-          sliceSecondValue={sliceSecondValue}
-          setSliceSecondValue={setSliceSecondValue}
+          sliceParams={sliceParams}
+          setSliceParams={setSliceParams}
+          sliceHelper={sliceHelper}
         />
       </ul>
     </section>

@@ -1,38 +1,24 @@
-import React, { FC } from "react";
+import React, { Dispatch, FC, SetStateAction } from "react";
 
 import "./nextPageButton.scss";
 
 interface NextPageButtonProps {
-  setSliceSecondValue: (value: number) => void;
-  sliceSecondValue: number;
-  setSliceMainValue: (value: number) => void;
-  sliceMainValue: number;
+  sliceParams: { from: number; to: number };
+  setSliceParams: Dispatch<SetStateAction<{ from: number; to: number }>>;
+  sliceHelper: number;
 }
 
 const NextPageButton: FC<NextPageButtonProps> = ({
-  setSliceMainValue,
-  sliceMainValue,
-  setSliceSecondValue,
-  sliceSecondValue,
+  sliceParams,
+  setSliceParams,
+  sliceHelper,
 }) => {
   const handleClick = (e: React.MouseEvent<HTMLInputElement>) => {
     e.preventDefault();
-    setSliceMainValue(
-      (sliceMainValue +=
-        window.innerWidth >= 768 && window.innerWidth < 1024
-          ? 8
-          : window.innerWidth >= 1024
-          ? 11
-          : 12)
-    );
-    setSliceSecondValue(
-      (sliceSecondValue +=
-        window.innerWidth >= 768 && window.innerWidth < 1024
-          ? 8
-          : window.innerWidth >= 1024
-          ? 11
-          : 12)
-    );
+    setSliceParams({
+      from: sliceParams.from + sliceHelper,
+      to: sliceParams.to + sliceHelper,
+    });
   };
 
   return (

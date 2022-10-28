@@ -48,13 +48,13 @@ const App: FC = () => {
     <div className={`appWrapper ${currentThemeColor}`}>
       {window.innerWidth >= 1024 && (
         <>
-          <div className="decoration-1"></div>
-          <div className="decoration-2"></div>
-          <div className="decoration-3"></div>
+          <div className="decoration-1" />
+          <div className="decoration-2" />
+          <div className="decoration-3" />
           {currentThemeColor === "bright" ? (
-            <div className="decoration-4"></div>
+            <div className="decoration-4 bright" />
           ) : (
-            <div className="decoration-4-dark"></div>
+            <div className="decoration-4 dark" />
           )}
         </>
       )}

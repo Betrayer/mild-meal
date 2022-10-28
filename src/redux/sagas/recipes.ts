@@ -21,7 +21,6 @@ function* randomRecipes() {
   try {
     // yield put(setLoadingStatus(true));
     const data: {} | [] = yield call(getRandomRecipes);
-    console.log(data);
     yield put(getRecipesResponse(data));
   } catch (error) {
     console.log(error);
@@ -38,7 +37,6 @@ function* chosenRecipe(action: GetChosenRecipeAction) {
   try {
     // yield put(setLoadingStatus(true));
     const data: {} | [] = yield call(getRecipe, action.payload);
-    console.log(data);
     yield put(getChosenRecipeResponse(data));
   } catch (error) {
     console.log(error);
@@ -55,7 +53,6 @@ function* searchResults(action: GetRecipeByKeywordAction) {
   try {
     // yield put(setLoadingStatus(true));
     const data: {} | [] = yield call(searchByKeywords, action.payload);
-    console.log(data);
     yield put(getRecipesByKeywordsResponse(data));
   } catch (error) {
     console.log(error);
@@ -72,7 +69,6 @@ function* tagSearchResults(action: GetRecipeByTagAction) {
   try {
     // yield put(setLoadingStatus(true));
     const data: {} | [] = yield call(searchByTag, action.payload);
-    console.log(data);
     yield put(getRecipesByTagsResponse(data));
   } catch (error) {
     console.log(error);

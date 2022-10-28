@@ -197,20 +197,25 @@
         line-height: 14px;
         width: 100%;
         margin: 0;
-        padding: 0;
         list-style: none;
         box-sizing: border-box;
-        padding: 0 10px 4px;
+        padding: 0 20px 10px;
         border-bottom: 1px solid black;
 
         @media (min-width: 768px) {
-          width: 194px;
+          width: 200px;
           font-size: 12px;
           line-height: 12px;
           letter-spacing: -0.09em;
           border-bottom: none;
-          padding: 0 2px 0 0;
+          padding: 0 4px;
           border-right: 1px solid black;
+          max-height: 148px;
+          overflow: scroll;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
         }
 
         &-title {
@@ -256,7 +261,7 @@
         border-bottom: 1px solid black;
 
         @media (min-width: 768px) {
-          width: 220px;
+          width: 216px;
           padding-right: 8px;
           padding-left: 10px;
           height: 196px;

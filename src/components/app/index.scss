@@ -90,13 +90,13 @@ body {
     background-repeat: no-repeat;
     z-index: 0;
     bottom: -50px;
-    left: 30%;
+    left: 5%;
     rotate: 6deg;
     transition: 1s;
 
     &:hover {
       rotate: -10deg;
-      left: 24%;
+      left: 2%;
     }
   }
 
@@ -120,7 +120,6 @@ body {
   }
 
   .decoration-4 {
-    background-image: url(../../assets/images/bg_decoration_4.png);
     background-size: cover;
     position: absolute;
     width: 400px;
@@ -132,28 +131,17 @@ body {
     transition: 1s;
 
     &:hover {
-      right: -40px;
+      right: -60px;
       top: -100px;
-      rotate: -10deg;
+      rotate: 14deg;
     }
-  }
 
-  .decoration-4-dark {
-    background-image: url(../../assets/images/bg_decoration_4_dark.png);
-    background-size: cover;
-    position: absolute;
-    width: 400px;
-    height: 500px;
-    background-repeat: no-repeat;
-    z-index: 0;
-    right: 0px;
-    top: -20px;
-    transition: 1s;
+    &.bright {
+      background-image: url(../../assets/images/bg_decoration_4.png);
+    }
 
-    &:hover {
-      right: -40px;
-      top: -100px;
-      rotate: -10deg;
+    &.dark {
+      background-image: url(../../assets/images/bg_decoration_4_dark.png);
     }
   }
 }
