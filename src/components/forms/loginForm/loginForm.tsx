@@ -53,17 +53,13 @@ const LoginForm: FC<LoginProps> = ({
         onChange={handleAuthInput}
       />
       <button
-        className={`login-form__buttons__login-button ${
-          currentThemeColor ? "dark" : ""
-        }`}
+        className={`login-form__buttons__login-button ${currentThemeColor}`}
         type="submit"
       >
         login
       </button>
       <button
-        className={`login-form__buttons__register-button ${
-          currentThemeColor ? "dark" : ""
-        }`}
+        className={`login-form__buttons__register-button ${currentThemeColor}`}
         onClick={switchForm}
       >
         i don't have an account, i wanna register

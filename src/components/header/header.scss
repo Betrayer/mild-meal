@@ -130,24 +130,7 @@
     }
   }
 
-  .login-button {
-    @media (min-width: 768px) {
-      width: 80px;
-      text-align: center;
-      cursor: pointer;
-      user-select: none;
-      display: block;
-      font-family: "Ovsyanka Press", sans-serif;
-      font-size: 24px;
-      letter-spacing: -0.1em;
-      position: relative;
-      &_wrapper {
-        position: relative;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      width: 86px;
-    }
+  & .login-button_wrapper {
+    position: relative;
   }
 }

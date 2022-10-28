@@ -34,6 +34,8 @@ body {
   position: relative;
   box-sizing: border-box;
   padding-bottom: 20px;
+  z-index: 0;
+  overflow: hidden;
 
   &.dark {
     background-image: url(../../assets/images/mobileBodyBg_dark.png);
@@ -56,6 +58,90 @@ body {
 
     &.dark {
       background-image: url(../../assets/images/laptopBodyBg_dark.png);
+    }
+  }
+
+  .decoration-1 {
+    background-image: url(../../assets/images/bg_decoration_1.png);
+    background-size: cover;
+    position: absolute;
+    width: 340px;
+    height: 536px;
+    background-repeat: no-repeat;
+    z-index: 0;
+    left: -80px;
+    top: 110px;
+    rotate: 26deg;
+    transition: 1s;
+
+    &:hover {
+      rotate: 34deg;
+      left: -140px;
+      top: 80px;
+    }
+  }
+
+  .decoration-2 {
+    background-image: url(../../assets/images/bg_decoration_2.png);
+    background-size: cover;
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    background-repeat: no-repeat;
+    z-index: 0;
+    bottom: -50px;
+    left: 5%;
+    rotate: 6deg;
+    transition: 1s;
+
+    &:hover {
+      rotate: -10deg;
+      left: 2%;
+    }
+  }
+
+  .decoration-3 {
+    background-image: url(../../assets/images/bg_decoration_3.png);
+    background-size: cover;
+    position: absolute;
+    width: 380px;
+    height: 290px;
+    background-repeat: no-repeat;
+    z-index: 0;
+    bottom: -50px;
+    right: -70px;
+    rotate: -14deg;
+    transition: 1s;
+
+    &:hover {
+      rotate: 0deg;
+      right: -150px;
+    }
+  }
+
+  .decoration-4 {
+    background-size: cover;
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    background-repeat: no-repeat;
+    z-index: 0;
+    right: 0px;
+    top: -20px;
+    transition: 1s;
+
+    &:hover {
+      right: -60px;
+      top: -100px;
+      rotate: 14deg;
+    }
+
+    &.bright {
+      background-image: url(../../assets/images/bg_decoration_4.png);
+    }
+
+    &.dark {
+      background-image: url(../../assets/images/bg_decoration_4_dark.png);
     }
   }
 }

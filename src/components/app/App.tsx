@@ -46,6 +46,19 @@ const App: FC = () => {
 
   return (
     <div className={`appWrapper ${currentThemeColor}`}>
+      {window.innerWidth >= 1024 && (
+        <>
+          <div className="decoration-1" />
+          <div className="decoration-2" />
+          <div className="decoration-3" />
+          {currentThemeColor === "bright" ? (
+            <div className="decoration-4 bright" />
+          ) : (
+            <div className="decoration-4 dark" />
+          )}
+        </>
+      )}
+
       <Header handleLoginButton={handleLoginButton} />
       {showLoginModal && (
         <LoginAndRegistrationSection handleLoginButton={handleLoginButton} />

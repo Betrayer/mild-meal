@@ -1,3 +1,13 @@
+@keyframes hover {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  100% {
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0);
+  }
+}
+
 .recipe-card {
   height: fit-content;
   width: 140px;
@@ -7,6 +17,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  transition: 0.5s;
 
   @media (min-width: 768px) {
     width: 190px;
@@ -16,6 +27,11 @@
     width: 238px;
     height: 196px;
     justify-content: center;
+  }
+
+  &:hover {
+    animation: hover 2s;
+    scale: 104%;
   }
 
   &__picture {

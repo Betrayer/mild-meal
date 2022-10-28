@@ -23,7 +23,10 @@ const Searchbar: FC<SearchbarProps> = ({
   );
 
   return (
-    <form className={`searchbar ${currentThemeColor}`} onSubmit={(e) => handleSearchSubmit(e)}>
+    <form
+      className={`searchbar ${currentThemeColor}`}
+      onSubmit={(e) => handleSearchSubmit(e)}
+    >
       {window.innerWidth >= 768 ? (
         inputIsVisible && (
           <input
@@ -43,6 +46,7 @@ const Searchbar: FC<SearchbarProps> = ({
       )}
       {window.innerWidth >= 768 && (
         <button
+        type="submit"
           className="searchbar-button"
           onClick={(e) => handleSearchButton(e)}
         ></button>

@@ -21,7 +21,7 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
     dispatch(getChosenRecipe(recipe.id));
     navigate("/recipe/#");
   };
-
+ 
   return (
     <li className="recipe-card" onClick={recipeRedirect}>
       <img

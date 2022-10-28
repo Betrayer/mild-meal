@@ -6,6 +6,8 @@ import ThemeChangeButton from "../themeChangeButton/themeChangeButton";
 import { useDispatch } from "react-redux";
 import { isAuth, loginResponce } from "../../../redux/actions/auth";
 
+import "./loginButton.scss";
+
 interface LoginButtonProps {
   handleLoginButton: () => void;
 }
@@ -16,9 +18,9 @@ const LoginButton: FC<LoginButtonProps> = ({ handleLoginButton }) => {
 
   const logOut = () => {
     signOut(auth);
-    dispatch(isAuth(false))
+    dispatch(isAuth(false));
     dispatch(loginResponce(""));
-  }
+  };
 
   const isLoggedIn = useSelector((state: RootState) => state.auth.isAuth);
   return (

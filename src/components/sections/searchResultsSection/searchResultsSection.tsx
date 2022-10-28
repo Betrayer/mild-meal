@@ -1,118 +1,49 @@
-import React from "react";
-import NextPageButton from "../../buttons/nextPageButton/nextPageButton";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../redux/rootReducer";
+import NextPageButton from "../../../components/buttons/nextPageButton/nextPageButton";
 import RecipeCard from "../../recipeCard/recipeCard";
 import "./searchResultsSection.scss";
+import { sliceHelper } from "../../../helpers/sliceHelper";
 
 const SearchResultsSection = () => {
+  const [searchPageContent, setSearchPageContent] = useState([]);
+
+  const searchResults = useSelector(
+    (state: RootState) => state.recipes.searchResults
+  );
+
+  const tagSearchResults = useSelector(
+    (state: RootState) => state.recipes.tagSearchResults
+  );
+
+  const [sliceParams, setSliceParams] = useState({
+    from: 0,
+    to: sliceHelper,
+  });
+
+  useEffect(() => {
+    setSearchPageContent(tagSearchResults);
+  }, [tagSearchResults]);
+
+  useEffect(() => {
+    setSearchPageContent(searchResults);
+  }, [searchResults]);
+
   return (
     <section>
-      <span className="search-results-section__title">Results for ""</span>
+      <span className="search-results-section__title">Results</span>
       <ul className="search-results-section__list">
-        {/* {window.innerWidth < 768 && (
-          <>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <NextPageButton />
-            </li>
-          </>
-        )}
-        {window.innerWidth >= 768 && window.innerWidth < 1024 && (
-          <>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <NextPageButton />
-            </li>
-          </>
-        )}
-        {window.innerWidth >= 1024 && (
-          <>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <RecipeCard />
-            </li>
-            <li>
-              <NextPageButton />
-            </li>
-          </>
-        )} */}
+        {searchPageContent
+          .slice(sliceParams.from, sliceParams.to)
+          .map((recipe: any, index: number) => (
+            <RecipeCard recipe={recipe} key={index} />
+          ))}
+        <NextPageButton
+          sliceParams={sliceParams}
+          setSliceParams={setSliceParams}
+          sliceHelper={sliceHelper}
+        />
       </ul>
     </section>
   );

@@ -3,10 +3,14 @@ import React, { FC, useEffect, useRef, useState } from "react";
 import "./taglistWrapper.scss";
 
 import { tagsArray } from "../../../assets/variables/taglist";
+import { useDispatch } from "react-redux";
+import { getRecipesByTag } from "../../../redux/actions/recipes";
+import { useNavigate } from "react-router-dom";
 
 const TaglistWrapper: FC = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const taglistRef = useRef(null);
-  const [currentTag, setCurrentTag] = useState("");
 
   useEffect(() => {
     //@ts-ignore
@@ -18,8 +22,8 @@ const TaglistWrapper: FC = () => {
   }, []);
 
   const handleTagClick = (e: any) => {
-    setCurrentTag(e.currentTarget.getAttribute("value"))
-    alert (e.currentTarget.getAttribute("value"));
+    // dispatch(getRecipesByTag(e.currentTarget.getAttribute("value")));
+    navigate("/results");
   };
   return (
     <div ref={taglistRef} className="taglist-wrapper">
