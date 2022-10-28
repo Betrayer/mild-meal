@@ -4,6 +4,7 @@ import { RootState } from "../../../redux/rootReducer";
 import NextPageButton from "../../../components/buttons/nextPageButton/nextPageButton";
 import RecipeCard from "../../recipeCard/recipeCard";
 import "./searchResultsSection.scss";
+import { sliceHelper } from "../../../helpers/sliceHelper";
 
 const SearchResultsSection = () => {
   const [searchPageContent, setSearchPageContent] = useState([]);
@@ -15,13 +16,6 @@ const SearchResultsSection = () => {
   const tagSearchResults = useSelector(
     (state: RootState) => state.recipes.tagSearchResults
   );
-
-  const sliceHelper =
-    window.innerWidth >= 768 && window.innerWidth < 1024
-      ? 8
-      : window.innerWidth >= 1024
-      ? 11
-      : 12;
 
   const [sliceParams, setSliceParams] = useState({
     from: 0,
