@@ -5,6 +5,7 @@ import NextPageButton from "../../../components/buttons/nextPageButton/nextPageB
 import RecipeCard from "../../recipeCard/recipeCard";
 import "./searchResultsSection.scss";
 import { sliceHelper } from "../../../helpers/sliceHelper";
+import GoBack from "../../buttons/navigateButtons/navigateButtons";
 
 const SearchResultsSection = () => {
   const [searchPageContent, setSearchPageContent] = useState([]);
