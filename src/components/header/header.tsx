@@ -30,7 +30,8 @@ const Header: FC<HeaderProps> = ({ handleLoginButton }) => {
   const handleSearchSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
     // dispatch(getRecipesByKeywords(inputValue)) 
-    navigate("/results");
+    // navigate("/results");
+    console.log(e)
   };
   
   const handleSearchButton = (e: React.FormEvent): void => {
