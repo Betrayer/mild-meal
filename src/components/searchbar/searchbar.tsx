@@ -27,29 +27,24 @@ const Searchbar: FC<SearchbarProps> = ({
       className={`searchbar ${currentThemeColor}`}
       onSubmit={(e) => handleSearchSubmit(e)}
     >
-      {window.innerWidth >= 768 ? (
-        inputIsVisible && (
-          <input
-            ref={inputValueRef}
-            className="searchbar-input"
-            placeholder="search by name"
-            onChange={(e) => setInputValue(e.target.value)}
-          ></input>
-        )
-      ) : (
+      {inputIsVisible && (
         <input
+          // pattern="[a-zA-Za]{3,}"
+          minLength={3}
+          type="text"
           ref={inputValueRef}
           className="searchbar-input"
           placeholder="search by name"
           onChange={(e) => setInputValue(e.target.value)}
-        ></input>
+        />
       )}
+
       {window.innerWidth >= 768 && (
         <button
-        type="submit"
+          type="submit"
           className="searchbar-button"
           onClick={(e) => handleSearchButton(e)}
-        ></button>
+        />
       )}
     </form>
   );

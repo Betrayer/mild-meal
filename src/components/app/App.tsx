@@ -8,6 +8,7 @@ import { getRecipes } from "../../redux/actions/recipes";
 import Header from "../header/header";
 import LoginAndRegistrationSection from "../sections/loginAndRegistrationSection/loginAndRegistrationSection";
 import "./index.scss";
+import NotFoundPage from "../../pages/404Page/404Page";
 
 const App: FC = () => {
   const HomePage = React.lazy(() => import("../../pages/homepage/HomePage"));
@@ -93,6 +94,14 @@ const App: FC = () => {
           element={
             <Suspense fallback={<>...</>}>
               <ProfilePage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <Suspense fallback={<>...</>}>
+              <NotFoundPage />
             </Suspense>
           }
         />

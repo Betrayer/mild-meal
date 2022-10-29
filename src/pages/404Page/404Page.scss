@@ -1,0 +1,79 @@
+.not-found-page {
+  width: 300px;
+  height: 300px;
+  background-image: url(../../assets/images/page404Bg.png);
+  background-size: 100% 100%;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 40px 20px 30px;
+  position: relative;
+
+  @media (min-width: 768px) {
+    width: 350px;
+    height: 350px;
+    margin-top: 150px;
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: 200px;
+  }
+
+  &-dark {
+    background-image: url(../../assets/images/page404BgDark.png);
+  }
+
+  & img {
+    width: 70%;
+  }
+
+  & .easter-egg {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    position: absolute;
+    top: 108px;
+    right: 136px;
+    border: none;
+    background-color: transparent;
+
+    @media (min-width: 768px) {
+      width: 30px;
+      height: 30px;
+      top: 120px;
+      right: 158px;
+    }
+
+    &-yolk {
+      margin: 8px 0 0 6px;
+      background: url(../../assets/images/yolk.png) center no-repeat;
+      background-size: auto 100%;
+      width: 14px;
+      height: 10px;
+      transition: 2s;
+
+      @media (min-width: 768px) {
+        margin: 14px 0 0 8px;
+      }
+    }
+
+    &:focus {
+      .easter-egg-yolk {
+        height: 150px;
+      }
+    }
+  }
+
+  & span {
+    font-size: 24px;
+    letter-spacing: -0.05em;
+
+    @media (min-width: 768px) {
+      font-size: 30px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.button-back-wrapper {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  width: 54%;
+  text-decoration: underline;
+
+  & .button-back,
+  .button-home {
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      scale: 110%;
+    }
+  }
+}
