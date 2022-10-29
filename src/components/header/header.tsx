@@ -29,8 +29,6 @@ const Header: FC<HeaderProps> = ({ handleLoginButton }) => {
   
   const handleSearchSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
-    // inputValue.length >= 3 && dispatch(getRecipesByKeywords(inputValue)) 
-    // inputValue.length >= 3 && navigate("/results");
     // dispatch(getRecipesByKeywords(inputValue)) 
     navigate("/results");
   };

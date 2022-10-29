@@ -16,7 +16,6 @@ const NotFoundPage: FC = () => {
         <div className="easter-egg-yolk"></div>
       </button>
       <span>Sorry, that page doesn't exist!</span>
-
       <NavigateButtons />
     </div>
   );
