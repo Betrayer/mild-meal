@@ -7,14 +7,14 @@ import {
 
 interface AuthState {
   user: {
-    accessToken: string;
+    uid: string;
   };
   isAuth: boolean;
 }
 
 const initialState: AuthState = {
   user: {
-    accessToken: "",
+    uid: "",
   },
   isAuth: false,
 };
@@ -27,17 +27,13 @@ export const authReducer = (
     case LOGIN_RESPONCE:
       return {
         ...state,
-        user: {
-          accessToken: action.payload,
-        },
+        user: action.payload,
       };
 
     case REGISTER_RESPONCE:
       return {
         ...state,
-        user: {
-          accessToken: action.payload,
-        },
+        user: action.payload,
       };
 
     case IS_AUTH:

@@ -15,9 +15,7 @@ const UserPersonalsSection: FC = () => {
   );
 
   return (
-    <section
-      className={`user-personals-section ${currentThemeColor}`}
-    >
+    <section className={`user-personals-section ${currentThemeColor}`}>
       <ul className="user-personals-section__list">
         <li className="user-personals-section__list-item">
           <span
@@ -28,13 +26,12 @@ const UserPersonalsSection: FC = () => {
           >
             change name
           </span>
-          <span
+          <input
             className={`user-personals-section__list-item__prop ${
               currentThemeColor ? "dark" : ""
             }`}
-          >
-            my name
-          </span>
+            defaultValue="name"
+          />
         </li>
         <li className="user-personals-section__list-item">
           <span
@@ -43,15 +40,14 @@ const UserPersonalsSection: FC = () => {
             }`}
             onClick={handleClick}
           >
-            change name
+            change age
           </span>
-          <span
+          <input
             className={`user-personals-section__list-item__prop ${
               currentThemeColor ? "dark" : ""
             }`}
-          >
-            my name
-          </span>
+            defaultValue="age"
+          />
         </li>
         <li className="user-personals-section__list-item">
           <span
@@ -60,15 +56,14 @@ const UserPersonalsSection: FC = () => {
             }`}
             onClick={handleClick}
           >
-            change name
+            change location
           </span>
-          <span
+          <input
             className={`user-personals-section__list-item__prop ${
               currentThemeColor ? "dark" : ""
             }`}
-          >
-            my name
-          </span>
+            defaultValue="location"
+          />
         </li>
         <li className="user-personals-section__list-item">
           <span
@@ -77,15 +72,14 @@ const UserPersonalsSection: FC = () => {
             }`}
             onClick={handleClick}
           >
-            change name
+            change email
           </span>
-          <span
+          <input
             className={`user-personals-section__list-item__prop ${
               currentThemeColor ? "dark" : ""
             }`}
-          >
-            my name
-          </span>
+            defaultValue="email"
+          />
         </li>
         <li className="user-personals-section__list-item">
           <span
@@ -94,15 +88,14 @@ const UserPersonalsSection: FC = () => {
             }`}
             onClick={handleClick}
           >
-            change name
+            change password
           </span>
-          <span
+          <input
             className={`user-personals-section__list-item__prop ${
               currentThemeColor ? "dark" : ""
             }`}
-          >
-            my name
-          </span>
+            defaultValue="password"
+          />
         </li>
       </ul>
       <SocialsSection />

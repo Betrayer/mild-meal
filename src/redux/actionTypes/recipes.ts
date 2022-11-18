@@ -8,6 +8,8 @@ export const GET_RECIPES_BY_KEYWORDS = "GET_RECIPES_BY_KEYWORDS";
 export const GET_RECIPES_BY_KEYWORDS_RESPONSE = "GET_RECIPES_BY_KEYWORDS_RESPONSE";
 export const GET_RECIPES_BY_TAG = "GET_RECIPES_BY_TAG";
 export const GET_RECIPES_BY_TAG_RESPONSE = "GET_RECIPES_BY_TAG_RESPONSE";
+export const IS_ADDED_TO_FAVS = "IS_ADDED_TO_FAVS";
+export const IS_ADDED_TO_TODO = "IS_ADDED_TO_TODO";
 
 export type GetRecipesAction = {
   type: typeof GET_RECIPES;
@@ -46,6 +48,16 @@ export type GetRecipeByTagAction = {
 export type GetRecipeByTagResponseAction = {
   type: typeof GET_RECIPES_BY_TAG_RESPONSE;
   payload: any;
+};
+
+export type AddRecipeToFavsAction = {
+  type: typeof IS_ADDED_TO_FAVS;
+  payload: boolean;
+};
+
+export type AddRecipeToTodoAction = {
+  type: typeof IS_ADDED_TO_TODO;
+  payload: boolean;
 };
 
 export type RecipesActions =

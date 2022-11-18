@@ -51,8 +51,9 @@ const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
     )
       .then((userCredential) => {
         const user: any = userCredential.user;
-        dispatch(loginResponce(user.accessToken));
-        dispatch(isAuth(true));
+        dispatch(loginResponce(user));
+        dispatch(isAuth(true)); 
+        console.log(user);
         handleLoginButton();
       })
       .catch((error) => {
@@ -72,7 +73,7 @@ const LoginAndRegistrationSection: FC<LoginAndRegistrationProps> = ({
       )
         .then((userCredential) => {
           const user: any = userCredential.user;
-          dispatch(registerResponce(user.accessToken));
+          dispatch(registerResponce(user));
           handleLoginButton();
         })
         .catch((error) => {

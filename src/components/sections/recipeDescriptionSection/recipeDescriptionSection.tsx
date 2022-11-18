@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/rootReducer";
 import { nanoid } from "nanoid";
@@ -8,13 +8,41 @@ import vegan from "../../../assets/images/vegan.png";
 import non_vegan from "../../../assets/images/non-vegan.png";
 import time from "../../../assets/images/cooking-time.png";
 import "./recipeDescriptionSection.scss";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { doc, updateDoc, arrayUnion } from "firebase/firestore";
+import { db } from "../../../configs/firebase.config";
 
 const RecipeDescriptionSection: FC = () => {
+  const [userId, setUserId] = useState("");
   const currentThemeColor = useSelector(
     (state: RootState) => state.global.themeColor
   );
 
   const recipe = useSelector((state: RootState) => state.recipes.chosenRecipe);
+
+  const auth = getAuth();
+  onAuthStateChanged(auth, (user: any) => {
+    if (user) {
+      setUserId(user.uid);
+    }
+  });
+  console.log(userId)
+
+  // const uid = useSelector(
+  //   (state: RootState) => state.auth.user.uid
+  // )
+
+  // const pussyRef = doc(db, "users", userId);
+
+  const suckCock = async () => {
+    await updateDoc(doc(db, "users", userId), {
+      favorites: arrayUnion(recipe.id),
+    });
+  };
+
+  suckCock();
+  // const user = auth.currentUser;
+  // console.log(user);
 
   return (
     <section className={`recipe-description-section ${currentThemeColor}`}>
@@ -33,6 +61,16 @@ const RecipeDescriptionSection: FC = () => {
                 {recipe.readyInMinutes}
                 <br />
                 min
+              </span>
+              <span className="details-button">
+                add to
+                <br />
+                favorites
+              </span>
+              <span className="details-button">
+                add to
+                <br />
+                todo-list
               </span>
               <img
                 className="recipe-card__gluten"

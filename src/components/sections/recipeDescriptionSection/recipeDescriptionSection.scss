@@ -88,70 +88,62 @@
           align-items: center;
           text-align: center;
 
-          @media (min-width: 768px) {
-            flex-wrap: wrap;
-            align-items: flex-start;
-          }
-
           .recipe-card__gluten,
           .recipe-card__vegan {
             position: static;
-            width: 30px;
-            height: 30px;
+            width: 26px;
+            height: 26px;
 
             @media (min-width: 768px) {
-              width: 46px;
-              height: 46px;
-            }
-
-            @media (min-width: 1024px) {
-              width: 54px;
-              height: 54px;
+              width: 36px;
+              height: 36px;
             }
           }
 
           .recipe-card__time {
             position: static;
             display: flex;
-            font-size: 12px;
-            line-height: 12px;
+            font-size: 11px;
+            line-height: 11px;
             align-items: center;
             justify-content: center;
             box-sizing: border-box;
-            margin-bottom: 38px;
             letter-spacing: -0.07em;
+            height: fit-content;
+            padding-right: 2px;
 
             @media (min-width: 768px) {
-              padding-right: 6px;
-              font-size: 20px;
-              line-height: 20px;
-              height: 100%;
+              margin-bottom: 4px;
+              font-size: 16px;
+              line-height: 16px;
               width: 50px;
-              margin-bottom: 22px;
             }
 
             @media (min-width: 1024px) {
-              margin-bottom: 14px;
-              padding-right: 0;
-              padding-left: 2px;
+            }
+          }
+
+          & .details-button {
+            font-size: 10px;
+            line-height: 10px;
+            letter-spacing: -0.09em;
+            margin: 2px 0;
+
+            @media (min-width: 768px) {
+              margin-top: 0;
+              margin-bottom: 4px;
+              font-size: 13px;
+              line-height: 13px;
             }
 
-            &-num {
-              font-size: 10px;
-
-              @media (min-width: 768px) {
-                font-size: 15px;
-              }
-
-              @media (min-width: 1024px) {
-                font-size: 20px;
-              }
+            &:hover {
+              text-decoration: underline;
             }
           }
         }
 
         .recipe-card__picture {
-          width: 250px;
+          width: 234px;
           height: 154px;
 
           @media (min-width: 768px) {
@@ -231,6 +223,7 @@
           font-size: 12px;
           line-height: 12px;
           padding-bottom: 2px;
+          letter-spacing: -0.13em;
         }
 
         &__content-wrapper {

@@ -41,6 +41,8 @@ const App: FC = () => {
     (state: RootState) => state.global.themeColor
   );
 
+  const isAuth = useSelector((state: RootState) => state.auth.isAuth);
+
   useEffect(() => {
     // dispatch(getRecipes());
   }, []);
@@ -69,7 +71,7 @@ const App: FC = () => {
           path="/"
           element={
             <Suspense fallback={<>...</>}>
-              <HomePage />
+              {isAuth ? <ProfilePage /> : <HomePage />}
             </Suspense>
           }
         />
@@ -86,14 +88,6 @@ const App: FC = () => {
           element={
             <Suspense fallback={<>...</>}>
               <SearchResultsPage />
-            </Suspense>
-          }
-        />
-        <Route
-          path="/profile"
-          element={
-            <Suspense fallback={<>...</>}>
-              <ProfilePage />
             </Suspense>
           }
         />
