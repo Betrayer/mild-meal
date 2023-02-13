@@ -7,9 +7,10 @@ import {
   GET_RECIPES_BY_KEYWORDS_RESPONSE,
   GET_RECIPES_BY_TAG,
   GET_RECIPES_BY_TAG_RESPONSE,
+  GET_USER_COLLECTION_RESPONSE,
   RecipesActions,
 } from "../actionTypes/recipes";
-import { Recipe } from "../../types/types";
+import { Recipe, UserCollection } from "../../types/types";
 
 export const getRecipes = (): RecipesActions => ({
   type: GET_RECIPES,
@@ -20,7 +21,7 @@ export const getRecipesResponse = (payload: any): RecipesActions => ({
   payload,
 });
 
-export const getChosenRecipe = (payload: number): RecipesActions => ({
+export const getChosenRecipe = (payload: number | null): RecipesActions => ({
   type: GET_CHOSEN_RECIPE,
   payload,
 });
@@ -49,3 +50,8 @@ export const getRecipesByTagsResponse = (payload: any): RecipesActions => ({
   type: GET_RECIPES_BY_TAG_RESPONSE,
   payload,
 });
+
+export const getUserCollectionResponse = (payload: any): RecipesActions => ({
+  type: GET_USER_COLLECTION_RESPONSE,
+  payload,
+})

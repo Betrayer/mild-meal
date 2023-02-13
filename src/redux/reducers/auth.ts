@@ -1,3 +1,4 @@
+import { UserData } from "../../types/types";
 import {
   AuthActions,
   LOGIN_RESPONCE,
@@ -6,15 +7,18 @@ import {
 } from "../actionTypes/auth";
 
 interface AuthState {
-  user: {
-    accessToken: string;
-  };
+  user: UserData;
   isAuth: boolean;
 }
 
 const initialState: AuthState = {
   user: {
+    uid: "",
     accessToken: "",
+    displayName: "",
+    email: "",
+    emailVerified: false,
+    isAnonymous: false,
   },
   isAuth: false,
 };
@@ -27,17 +31,13 @@ export const authReducer = (
     case LOGIN_RESPONCE:
       return {
         ...state,
-        user: {
-          accessToken: action.payload,
-        },
+        user: action.payload,
       };
 
     case REGISTER_RESPONCE:
       return {
         ...state,
-        user: {
-          accessToken: action.payload,
-        },
+        user: action.payload,
       };
 
     case IS_AUTH:
