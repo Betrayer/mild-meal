@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
-export const getRecipe = async (id: number) => {
+export const getRecipe = async (id: number | null) => {
   const res = await axios.get(
     `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`
   );

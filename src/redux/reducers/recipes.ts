@@ -4,14 +4,17 @@ import {
   GET_RECIPES_BY_KEYWORDS_RESPONSE,
   GET_RECIPES_BY_TAG_RESPONSE,
   RecipesActions,
+  GET_USER_COLLECTION_RESPONSE,
 } from "../actionTypes/recipes";
 import { Recipe } from "../../types/types";
+import { UserCollection } from "../../types/types";
 
 interface RecipesState {
   randomRecipes: any;
   chosenRecipe: any;
   searchResults: any;
   tagSearchResults: any;
+  userCollection: any;
 }
 
 const initialState: RecipesState = {
@@ -19,6 +22,7 @@ const initialState: RecipesState = {
   chosenRecipe: {},
   searchResults: [],
   tagSearchResults: [],
+  userCollection: { favorites: {}, todo: {}, saved: {} },
 };
 
 export const recipesReducer = (
@@ -45,6 +49,11 @@ export const recipesReducer = (
       return {
         ...state,
         tagSearchResults: action.payload,
+      };
+    case GET_USER_COLLECTION_RESPONSE:
+      return {
+        ...state,
+        userCollection: action.payload,
       };
     default:
       return state;

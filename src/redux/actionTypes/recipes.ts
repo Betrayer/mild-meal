@@ -8,6 +8,7 @@ export const GET_RECIPES_BY_KEYWORDS = "GET_RECIPES_BY_KEYWORDS";
 export const GET_RECIPES_BY_KEYWORDS_RESPONSE = "GET_RECIPES_BY_KEYWORDS_RESPONSE";
 export const GET_RECIPES_BY_TAG = "GET_RECIPES_BY_TAG";
 export const GET_RECIPES_BY_TAG_RESPONSE = "GET_RECIPES_BY_TAG_RESPONSE";
+export const GET_USER_COLLECTION_RESPONSE = "GET_USER_COLLECTION_RESPONSE";
 
 export type GetRecipesAction = {
   type: typeof GET_RECIPES;
@@ -20,7 +21,7 @@ export type GetRecipesResponseAction = {
 
 export type GetChosenRecipeAction = {
   type: typeof GET_CHOSEN_RECIPE;
-  payload: number;
+  payload: number | null;
 };
 
 export type GetChosenRecipeResponseAction = {
@@ -48,6 +49,11 @@ export type GetRecipeByTagResponseAction = {
   payload: any;
 };
 
+export type  GetUserCollectionAction= {
+  type: typeof GET_USER_COLLECTION_RESPONSE;
+  payload: any;
+}
+
 export type RecipesActions =
   | GetRecipesAction
   | GetRecipesResponseAction
@@ -56,4 +62,6 @@ export type RecipesActions =
   | GetRecipeByKeywordAction
   | GetRecipeByKeywordResponseAction
   | GetRecipeByTagAction
-  | GetRecipeByTagResponseAction;
+  | GetRecipeByTagResponseAction
+  | GetUserCollectionAction;
+  

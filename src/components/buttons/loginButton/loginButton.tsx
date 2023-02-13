@@ -19,7 +19,14 @@ const LoginButton: FC<LoginButtonProps> = ({ handleLoginButton }) => {
   const logOut = () => {
     signOut(auth);
     dispatch(isAuth(false));
-    dispatch(loginResponce(""));
+    dispatch(loginResponce({
+      uid: "",
+      accessToken: "",
+      displayName: "",
+      email: "",
+      emailVerified: false,
+      isAnonymous: false,
+    }));
   };
 
   const isLoggedIn = useSelector((state: RootState) => state.auth.isAuth);

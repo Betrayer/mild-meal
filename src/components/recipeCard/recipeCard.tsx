@@ -15,7 +15,7 @@ interface RecipeCardProps {
 
 const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch();  
 
   const recipeRedirect = (): void => {
     dispatch(getChosenRecipe(recipe.id));
